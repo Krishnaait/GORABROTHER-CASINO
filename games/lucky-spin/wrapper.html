@@ -13,22 +13,9 @@
 
         html, body {
             width: 100%;
-            height: 100%;
             font-family: 'Arial', sans-serif;
             background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
             color: #fff;
-        }
-
-        body {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .game-wrapper {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            width: 100%;
         }
 
         /* HEADER - NOT STICKY */
@@ -40,7 +27,6 @@
             background: rgba(0, 0, 0, 0.9);
             border-bottom: 3px solid #d4af37;
             z-index: 50;
-            flex-shrink: 0;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
             position: static;
         }
@@ -112,12 +98,12 @@
             box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
         }
 
+        /* GAME CONTAINER - Takes full viewport height */
         .game-container {
-            flex: 1;
-            overflow: hidden;
-            position: relative;
             width: 100%;
-            min-height: calc(100vh - 70px); /* Full viewport minus header height */
+            height: calc(100vh - 70px); /* Full viewport minus header */
+            position: relative;
+            overflow: hidden;
         }
 
         iframe {
@@ -127,14 +113,12 @@
             display: block;
         }
 
-        /* FOOTER - NOT STICKY */
+        /* FOOTER - Below the game, visible when scrolling */
         footer {
             background: #000;
             color: #fff;
             border-top: 3px solid #d4af37;
             padding: 40px 20px;
-            margin-top: 0;
-            flex-shrink: 0;
             position: static;
         }
 
@@ -218,15 +202,7 @@
             font-weight: bold;
         }
 
-        .fullscreen-mode {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: 10000;
-        }
-
+        /* FULLSCREEN MODE */
         .fullscreen-mode header {
             position: fixed;
             top: 0;
@@ -237,22 +213,26 @@
         }
 
         .fullscreen-mode .game-container {
-            margin-top: 60px;
-            height: calc(100vh - 60px);
-            width: 100vw;
+            position: fixed;
+            top: 70px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: calc(100vh - 70px);
+            z-index: 10000;
         }
 
         .fullscreen-mode footer {
             display: none;
         }
 
+        /* RESPONSIVE */
         @media (max-width: 768px) {
             header {
                 flex-wrap: wrap;
                 gap: 10px;
                 padding: 10px 15px;
-                position: static;
-        }
+            }
 
             nav {
                 display: none;
@@ -272,9 +252,18 @@
                 padding: 20px 15px;
             }
 
-            .footer-content {
+            .footer-container {
                 grid-template-columns: 1fr;
-                gap: 15px;
+                gap: 20px;
+            }
+
+            .footer-column h3 {
+                font-size: 14px;
+            }
+
+            .footer-column p,
+            .footer-column ul li a {
+                font-size: 12px;
             }
         }
     </style>
@@ -394,12 +383,8 @@
             window.location.href = '/';
         }
 
-        // Keyboard shortcuts
-        document.addEventListener('keydown', (e) => {
-            if ((e.key === 'f' || e.key === 'F') && e.ctrlKey) {
-                e.preventDefault();
-                toggleFullscreen();
-            }
+        // Handle escape key to exit fullscreen
+        document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape' && isFullscreen) {
                 exitFullscreen();
             }
