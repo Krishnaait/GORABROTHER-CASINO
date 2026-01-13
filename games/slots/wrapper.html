@@ -20,7 +20,6 @@
             font-family: 'Arial', sans-serif;
             background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
             color: #fff;
-            min-height: 100vh;
         }
 
         /* HEADER */
@@ -101,18 +100,17 @@
             box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
         }
 
-        /* GAME CONTAINER */
+        /* GAME CONTAINER - Auto height based on content */
         .game-container {
             width: 100%;
-            height: calc(100vh - 70px);
             position: relative;
         }
 
         iframe {
             width: 100%;
-            height: 100%;
             border: none;
             display: block;
+            overflow: hidden;
         }
 
         /* FOOTER */
@@ -262,7 +260,7 @@
     </header>
 
     <div class="game-container" id="gameContainer">
-        <iframe src="index.html" allow="fullscreen" id="gameFrame"></iframe>
+        <iframe src="index.html" allow="fullscreen" id="gameFrame" scrolling="no"></iframe>
     </div>
 
     <footer>
@@ -327,6 +325,37 @@
     </footer>
 
     <script>
+        // Auto-resize iframe to fit its content
+        function resizeIframe() {
+            const iframe = document.getElementById('gameFrame');
+            try {
+                // Set initial height
+                iframe.style.height = '1500px'; // Default tall height
+                
+                // Try to get actual content height
+                if (iframe.contentWindow && iframe.contentWindow.document) {
+                    const contentHeight = iframe.contentWindow.document.body.scrollHeight;
+                    if (contentHeight > 0) {
+                        iframe.style.height = contentHeight + 'px';
+                    }
+                }
+            } catch (e) {
+                // Cross-origin restriction, use default height
+                iframe.style.height = '1500px';
+            }
+        }
+
+        // Resize on load
+        document.getElementById('gameFrame').onload = function() {
+            resizeIframe();
+            // Resize again after a short delay to catch dynamic content
+            setTimeout(resizeIframe, 500);
+            setTimeout(resizeIframe, 1500);
+        };
+
+        // Also resize on window resize
+        window.addEventListener('resize', resizeIframe);
+
         function toggleFullscreen() {
             const gameContainer = document.getElementById('gameContainer');
             
