@@ -25,11 +25,11 @@ bkcore.hexgl.HUD = function(opts)
 	this.ctx = this.canvas.getContext('2d');
 	this.ctx.textAlign = "center";
 
-	this.bg = opts.bg;//"textures/hud/hud-bg.png";
+	this.bg = opts.bg;//"textures/hud/hud-bg.webp";
 
-	this.fgspeed = opts.speed;//"textures/hud/hud-fg-speed.png";
+	this.fgspeed = opts.speed;//"textures/hud/hud-fg-speed.webp";
 
-	this.fgshield = opts.shield;//"textures/hud/hud-fg-shield.png";
+	this.fgshield = opts.shield;//"textures/hud/hud-fg-shield.webp";
 
 	this.speedFontRatio = 24;
 	this.speedBarRatio = 2.91;

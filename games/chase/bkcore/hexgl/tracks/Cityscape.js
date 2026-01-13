@@ -48,21 +48,21 @@ bkcore.hexgl.tracks.Cityscape = {
 		{
 			this.lib.load({
 				textures: {
-					'hex'								: "textures/hud/hex.jpg",
-					'spark'								: "textures/particles/spark.png",
-					'cloud'								: "textures/particles/cloud.png",
-					'ship.feisar.diffuse'				: "textures/ships/feisar/diffuse.jpg",
-					'booster.diffuse'					: "textures/ships/feisar/booster/booster.png",
-					'booster.sprite'					: "textures/ships/feisar/booster/boostersprite.jpg",
-					'track.cityscape.diffuse'			: "textures/tracks/cityscape/diffuse.jpg",
-					'track.cityscape.scrapers1.diffuse'	: "textures/tracks/cityscape/scrapers1/diffuse.jpg",
-					'track.cityscape.scrapers2.diffuse'	: "textures/tracks/cityscape/scrapers2/diffuse.jpg",
-					'track.cityscape.start.diffuse'		: "textures/tracks/cityscape/start/diffuse.jpg",
-					'track.cityscape.start.banner'		: "textures/tracks/cityscape/start/start.jpg",
-					'bonus.base.diffuse'				: "textures/bonus/base/diffuse.jpg"
+					'hex'								: "textures/hud/hex.webp",
+					'spark'								: "textures/particles/spark.webp",
+					'cloud'								: "textures/particles/cloud.webp",
+					'ship.feisar.diffuse'				: "textures/ships/feisar/diffuse.webp",
+					'booster.diffuse'					: "textures/ships/feisar/booster/booster.webp",
+					'booster.sprite'					: "textures/ships/feisar/booster/boostersprite.webp",
+					'track.cityscape.diffuse'			: "textures/tracks/cityscape/diffuse.webp",
+					'track.cityscape.scrapers1.diffuse'	: "textures/tracks/cityscape/scrapers1/diffuse.webp",
+					'track.cityscape.scrapers2.diffuse'	: "textures/tracks/cityscape/scrapers2/diffuse.webp",
+					'track.cityscape.start.diffuse'		: "textures/tracks/cityscape/start/diffuse.webp",
+					'track.cityscape.start.banner'		: "textures/tracks/cityscape/start/start.webp",
+					'bonus.base.diffuse'				: "textures/bonus/base/diffuse.webp"
 				},
 				texturesCube: {
-					'skybox.dawnclouds'					: "textures/skybox/dawnclouds/%1.jpg"
+					'skybox.dawnclouds'					: "textures/skybox/dawnclouds/%1.webp"
 				},
 				geometries: {
 					'bonus.base'						: "geometries/bonus/base/base.js",
@@ -76,13 +76,13 @@ bkcore.hexgl.tracks.Cityscape = {
 					'track.cityscape.bonus.speed'		: "geometries/tracks/cityscape/bonus/speed.js"
 				},
 				analysers: {
-					'track.cityscape.collision'			: "textures/tracks/cityscape/collision.png",
-					'track.cityscape.height'			: "textures/tracks/cityscape/height.png"
+					'track.cityscape.collision'			: "textures/tracks/cityscape/collision.webp",
+					'track.cityscape.height'			: "textures/tracks/cityscape/height.webp"
 				},
 				images: {
-					'hud.bg'							: "textures/hud/hud-bg.png",
-					'hud.speed'							: "textures/hud/hud-fg-speed.png",
-					'hud.shield'						: "textures/hud/hud-fg-shield.png"
+					'hud.bg'							: "textures/hud/hud-bg.webp",
+					'hud.speed'							: "textures/hud/hud-fg-speed.webp",
+					'hud.shield'						: "textures/hud/hud-fg-shield.webp"
 				},
 				sounds: {
 					bg: {
@@ -120,33 +120,33 @@ bkcore.hexgl.tracks.Cityscape = {
 		{console.log('HIGH');
 			this.lib.load({
 				textures: {
-					'hex'								: "textures.full/hud/hex.jpg",
-					'spark'								: "textures.full/particles/spark.png",
-					'cloud'								: "textures.full/particles/cloud.png",
-					'ship.feisar.diffuse'				: "textures.full/ships/feisar/diffuse.jpg",
-					'ship.feisar.specular'				: "textures.full/ships/feisar/specular.jpg",
-					'ship.feisar.normal'				: "textures.full/ships/feisar/normal.jpg",
-					'booster.diffuse'					: "textures.full/ships/feisar/booster/booster.png",
-					'booster.sprite'					: "textures.full/ships/feisar/booster/boostersprite.jpg",
-					'track.cityscape.diffuse'			: "textures.full/tracks/cityscape/diffuse.jpg",
-					'track.cityscape.specular'			: "textures.full/tracks/cityscape/specular.jpg",
-					'track.cityscape.normal'			: "textures.full/tracks/cityscape/normal.jpg",
-					'track.cityscape.scrapers1.diffuse'	: "textures.full/tracks/cityscape/scrapers1/diffuse.jpg",
-					'track.cityscape.scrapers1.specular': "textures.full/tracks/cityscape/scrapers1/specular.jpg",
-					'track.cityscape.scrapers1.normal'	: "textures.full/tracks/cityscape/scrapers1/normal.jpg",
-					'track.cityscape.scrapers2.diffuse'	: "textures.full/tracks/cityscape/scrapers2/diffuse.jpg",
-					'track.cityscape.scrapers2.specular': "textures.full/tracks/cityscape/scrapers2/specular.jpg",
-					'track.cityscape.scrapers2.normal'	: "textures.full/tracks/cityscape/scrapers2/normal.jpg",
-					'track.cityscape.start.diffuse'		: "textures.full/tracks/cityscape/start/diffuse.jpg",
-					'track.cityscape.start.specular'	: "textures.full/tracks/cityscape/start/specular.jpg",
-					'track.cityscape.start.normal'		: "textures.full/tracks/cityscape/start/normal.jpg",
-					'track.cityscape.start.banner'		: "textures.full/tracks/cityscape/start/start.jpg",
-					'bonus.base.diffuse'				: "textures.full/bonus/base/diffuse.jpg",
-					'bonus.base.normal'					: "textures.full/bonus/base/normal.jpg",
-					'bonus.base.specular'				: "textures.full/bonus/base/specular.jpg"
+					'hex'								: "textures.full/hud/hex.webp",
+					'spark'								: "textures.full/particles/spark.webp",
+					'cloud'								: "textures.full/particles/cloud.webp",
+					'ship.feisar.diffuse'				: "textures.full/ships/feisar/diffuse.webp",
+					'ship.feisar.specular'				: "textures.full/ships/feisar/specular.webp",
+					'ship.feisar.normal'				: "textures.full/ships/feisar/normal.webp",
+					'booster.diffuse'					: "textures.full/ships/feisar/booster/booster.webp",
+					'booster.sprite'					: "textures.full/ships/feisar/booster/boostersprite.webp",
+					'track.cityscape.diffuse'			: "textures.full/tracks/cityscape/diffuse.webp",
+					'track.cityscape.specular'			: "textures.full/tracks/cityscape/specular.webp",
+					'track.cityscape.normal'			: "textures.full/tracks/cityscape/normal.webp",
+					'track.cityscape.scrapers1.diffuse'	: "textures.full/tracks/cityscape/scrapers1/diffuse.webp",
+					'track.cityscape.scrapers1.specular': "textures.full/tracks/cityscape/scrapers1/specular.webp",
+					'track.cityscape.scrapers1.normal'	: "textures.full/tracks/cityscape/scrapers1/normal.webp",
+					'track.cityscape.scrapers2.diffuse'	: "textures.full/tracks/cityscape/scrapers2/diffuse.webp",
+					'track.cityscape.scrapers2.specular': "textures.full/tracks/cityscape/scrapers2/specular.webp",
+					'track.cityscape.scrapers2.normal'	: "textures.full/tracks/cityscape/scrapers2/normal.webp",
+					'track.cityscape.start.diffuse'		: "textures.full/tracks/cityscape/start/diffuse.webp",
+					'track.cityscape.start.specular'	: "textures.full/tracks/cityscape/start/specular.webp",
+					'track.cityscape.start.normal'		: "textures.full/tracks/cityscape/start/normal.webp",
+					'track.cityscape.start.banner'		: "textures.full/tracks/cityscape/start/start.webp",
+					'bonus.base.diffuse'				: "textures.full/bonus/base/diffuse.webp",
+					'bonus.base.normal'					: "textures.full/bonus/base/normal.webp",
+					'bonus.base.specular'				: "textures.full/bonus/base/specular.webp"
 				},
 				texturesCube: {
-					'skybox.dawnclouds'					: "textures.full/skybox/dawnclouds/%1.jpg"
+					'skybox.dawnclouds'					: "textures.full/skybox/dawnclouds/%1.webp"
 				},
 				geometries: {
 					'bonus.base'						: "geometries/bonus/base/base.js",
@@ -160,13 +160,13 @@ bkcore.hexgl.tracks.Cityscape = {
 					'track.cityscape.bonus.speed'		: "geometries/tracks/cityscape/bonus/speed.js"
 				},
 				analysers: {
-					'track.cityscape.collision'			: "textures.full/tracks/cityscape/collision.png",
-					'track.cityscape.height'			: "textures.full/tracks/cityscape/height.png"
+					'track.cityscape.collision'			: "textures.full/tracks/cityscape/collision.webp",
+					'track.cityscape.height'			: "textures.full/tracks/cityscape/height.webp"
 				},
 				images: {
-					'hud.bg'							: "textures.full/hud/hud-bg.png",
-					'hud.speed'							: "textures.full/hud/hud-fg-speed.png",
-					'hud.shield'						: "textures.full/hud/hud-fg-shield.png"
+					'hud.bg'							: "textures.full/hud/hud-bg.webp",
+					'hud.speed'							: "textures.full/hud/hud-fg-speed.webp",
+					'hud.shield'						: "textures.full/hud/hud-fg-shield.webp"
 				},
 				sounds: {
 					bg: {

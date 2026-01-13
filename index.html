@@ -64,6 +64,15 @@
             justify-content: center;
             overflow: hidden;
             border-bottom: 3px solid #d4af37;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(0, 0, 0, 0.8) 100%);
+            background-attachment: fixed;
+            animation: heroGradient 15s ease infinite;
+        }
+
+        @keyframes heroGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         .hero-video {
@@ -74,6 +83,7 @@
             height: 100%;
             object-fit: cover;
             z-index: 1;
+            opacity: 0.8;
         }
 
         .hero-overlay {
@@ -401,7 +411,7 @@
         <div class="games-grid">
             <!-- CHASE Racing Game -->
             <div class="game-card">
-                <img src="images/chase-game.png" alt="CHASE Racing Game" style="width: 100%; height: 200px; object-fit: cover; border-bottom: 2px solid #d4af37;">
+                <img src="images/chase-game.webp" alt="CHASE Racing Game" style="width: 100%; height: 200px; object-fit: cover; border-bottom: 2px solid #d4af37;">
                 <div class="game-card-content">
                     <h3>CHASE</h3>
                     <p>Experience futuristic 3D racing with challenging tracks. Navigate obstacles, collect bonuses, and compete for the highest score!</p>

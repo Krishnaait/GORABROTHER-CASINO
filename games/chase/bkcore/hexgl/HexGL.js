@@ -268,7 +268,7 @@ bkcore.hexgl.HexGL.prototype.displayScore = function(f, l)
 		+'&p[title]='+encodeURIComponent('I just scored '+dt.innerHTML+' in '+'Cityscape ('+d+') on CHASE!')
 		+'&p[summary]='+encodeURIComponent('CHASE is a futuristic racing game by GORA BROTHERS. Experience fast-paced 3D racing with challenging tracks and exciting gameplay!')
 		+'&p[url]='+encodeURIComponent('http://gorabrothers.com')
-		+'&p[images][0]='+encodeURIComponent('http://gorabrothers.com/image.png'));
+		+'&p[images][0]='+encodeURIComponent('http://gorabrothers.com/image.webp'));
 
 	bkcore.hexgl.Ladder.displayLadder('finish-ladder', t, d, 8);
 

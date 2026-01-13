@@ -62,7 +62,7 @@ html, body {
   bottom: 0;
   left: 0;
   z-index: 0;
-  background: url('bg.jpg') no-repeat center center fixed;
+  background: url('bg.webp') no-repeat center center fixed;
   overflow: hidden;
   text-align: center;
   -moz-background-size: cover;
@@ -87,7 +87,7 @@ html, body {
   bottom: 5%;
   left: 0;
   z-index: 1;
-  background: url('title.png') no-repeat center top;
+  background: url('title.webp') no-repeat center top;
   -moz-background-size: auto 50%;
   -webkit-background-size: auto 50%;
   -ms-background-size: auto 50%;
