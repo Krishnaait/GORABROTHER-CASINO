@@ -11,23 +11,19 @@
             box-sizing: border-box;
         }
 
-        html, body {
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
             width: 100%;
-            height: 100%;
             font-family: 'Arial', sans-serif;
             background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
             color: #fff;
-            overflow: hidden; /* NO outer scrollbar */
+            min-height: 100vh;
         }
 
-        .game-wrapper {
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
-            width: 100%;
-        }
-
-        /* HEADER - NOT STICKY */
+        /* HEADER */
         header {
             display: flex;
             justify-content: space-between;
@@ -35,9 +31,7 @@
             padding: 15px 30px;
             background: rgba(0, 0, 0, 0.9);
             border-bottom: 3px solid #d4af37;
-            z-index: 50;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-            flex-shrink: 0;
         }
 
         .logo {
@@ -107,12 +101,11 @@
             box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
         }
 
-        /* GAME CONTAINER - Takes remaining space */
+        /* GAME CONTAINER */
         .game-container {
-            flex: 1;
             width: 100%;
+            height: calc(100vh - 70px);
             position: relative;
-            overflow: hidden;
         }
 
         iframe {
@@ -122,46 +115,11 @@
             display: block;
         }
 
-        /* FOOTER OVERLAY - Hidden by default, shown on button click */
-        .footer-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.95);
-            z-index: 1000;
-            display: none;
-            overflow-y: auto;
-            padding-top: 70px;
-        }
-
-        .footer-overlay.active {
-            display: block;
-        }
-
-        .footer-close {
-            position: fixed;
-            top: 15px;
-            right: 30px;
-            background: #d4af37;
-            color: #1a1a1a;
-            padding: 10px 25px;
-            border: none;
-            border-radius: 50px;
-            font-weight: bold;
-            cursor: pointer;
-            z-index: 1001;
-            font-size: 14px;
-        }
-
-        .footer-close:hover {
-            background: #ffd700;
-        }
-
+        /* FOOTER */
         footer {
             background: #000;
             color: #fff;
+            border-top: 3px solid #d4af37;
             padding: 40px 20px;
         }
 
@@ -169,7 +127,7 @@
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 40px;
             margin-bottom: 40px;
         }
@@ -245,25 +203,13 @@
             font-weight: bold;
         }
 
-        /* Info Button */
-        .btn-info {
-            background: rgba(212, 175, 55, 0.2);
-            color: #d4af37;
-            padding: 10px 20px;
-            border: 2px solid #d4af37;
-            border-radius: 50px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-size: 13px;
-        }
-
-        .btn-info:hover {
-            background: rgba(212, 175, 55, 0.4);
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
-        }
-
         /* RESPONSIVE */
+        @media (max-width: 992px) {
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         @media (max-width: 768px) {
             header {
                 flex-wrap: wrap;
@@ -280,9 +226,9 @@
                 justify-content: space-between;
             }
 
-            .btn-back, .btn-fullscreen, .btn-info {
-                font-size: 11px;
-                padding: 8px 12px;
+            .btn-back, .btn-fullscreen {
+                font-size: 12px;
+                padding: 8px 15px;
             }
 
             .footer-container {
@@ -302,97 +248,86 @@
     </style>
 </head>
 <body>
-    <div class="game-wrapper" id="gameWrapper">
-        <header id="gameHeader">
-            <div class="logo">🎰 GORA BROTHERS</div>
-            <nav>
-                <a href="/">HOME</a>
-                <a href="/#games">GAMES</a>
-                <a href="/about.html">ABOUT</a>
-            </nav>
-            <div class="header-buttons">
-                <button class="btn-back" onclick="goHome()">← BACK TO HOME</button>
-                <button class="btn-info" onclick="showFooter()">ℹ️ INFO</button>
-                <button class="btn-fullscreen" id="fullscreenBtn" onclick="toggleFullscreen()">⛶ FULLSCREEN</button>
-            </div>
-        </header>
-
-        <div class="game-container" id="gameContainer">
-            <iframe src="index.html" allow="fullscreen"></iframe>
+    <header>
+        <div class="logo">🎰 GORA BROTHERS</div>
+        <nav>
+            <a href="/">HOME</a>
+            <a href="/#games">GAMES</a>
+            <a href="/about.html">ABOUT</a>
+        </nav>
+        <div class="header-buttons">
+            <button class="btn-back" onclick="goHome()">← BACK TO HOME</button>
+            <button class="btn-fullscreen" id="fullscreenBtn" onclick="toggleFullscreen()">⛶ FULLSCREEN</button>
         </div>
+    </header>
+
+    <div class="game-container" id="gameContainer">
+        <iframe src="index.html" allow="fullscreen" id="gameFrame"></iframe>
     </div>
 
-    <!-- Footer Overlay -->
-    <div class="footer-overlay" id="footerOverlay">
-        <button class="footer-close" onclick="hideFooter()">✕ CLOSE</button>
-        <footer>
-            <div class="footer-container">
-                <!-- Column 1: GORA BROTHERS -->
-                <div class="footer-column">
-                    <h3>🎰 GORA BROTHERS</h3>
-                    <p><strong>Company:</strong> GORA BROTHERS PRIVATE LIMITED</p>
-                    <p><strong>CIN:</strong> U63030RJ2020PTC068805</p>
-                    <p><strong>GST:</strong> 08AAICG3022F1ZY</p>
-                    <p><strong>PAN:</strong> AAICG3022F</p>
-                </div>
-
-                <!-- Column 2: LOCATION -->
-                <div class="footer-column">
-                    <h3>📍 LOCATION</h3>
-                    <p>Jaipur, Rajasthan, India</p>
-                    <p>Premium Entertainment Experience</p>
-                    <p>24/7 Support Available</p>
-                    <p style="margin-top: 15px; font-size: 0.9em; color: #999;">
-                        GORA BROTHERS PRIVATE LIMITED<br>
-                        Jaipur, Rajasthan 302001, India
-                    </p>
-                </div>
-
-                <!-- Column 3: LEGAL -->
-                <div class="footer-column">
-                    <h3>⚖️ LEGAL</h3>
-                    <ul>
-                        <li><a href="/privacy.html">Privacy Policy</a></li>
-                        <li><a href="/terms.html">Terms & Conditions</a></li>
-                        <li><a href="/disclaimer.html">Disclaimer</a></li>
-                        <li><a href="/responsible.html">Responsible Gaming</a></li>
-                        <li><a href="/fair-gaming.html">Fair Gaming Policy</a></li>
-                    </ul>
-                </div>
-
-                <!-- Column 4: GAMES -->
-                <div class="footer-column">
-                    <h3>🎮 GAMES</h3>
-                    <ul>
-                        <li><a href="/games/chase/wrapper.html">CHASE Racing</a></li>
-                        <li><a href="/games/slots/wrapper.html">Slot Machine</a></li>
-                        <li><a href="/games/blackjack/wrapper.html">Blackjack</a></li>
-                        <li><a href="/games/lucky-spin/wrapper.html">Roulette</a></li>
-                    </ul>
-                </div>
+    <footer>
+        <div class="footer-container">
+            <!-- Column 1: GORA BROTHERS -->
+            <div class="footer-column">
+                <h3>🎰 GORA BROTHERS</h3>
+                <p><strong>Company:</strong> GORA BROTHERS PRIVATE LIMITED</p>
+                <p><strong>CIN:</strong> U63030RJ2020PTC068805</p>
+                <p><strong>GST:</strong> 08AAICG3022F1ZY</p>
+                <p><strong>PAN:</strong> AAICG3022F</p>
             </div>
 
-            <!-- Footer Bottom -->
-            <div class="footer-bottom">
-                <div class="footer-links">
-                    <a href="/privacy.html">Privacy</a> | 
-                    <a href="/terms.html">Terms</a> | 
-                    <a href="/disclaimer.html">Disclaimer</a> | 
-                    <a href="/responsible.html">Responsible Gaming</a> | 
-                    <a href="/fair-gaming.html">Fair Gaming</a>
-                </div>
-                <p class="copyright">© 2025 GORA BROTHERS PRIVATE LIMITED. All Rights Reserved. | Play For Entertainment</p>
-                <p class="warning">⚠️ 18+ ONLY | PLAY FOR FUN | NO REAL MONEY<br>This is a free-to-play gaming website for entertainment purposes only</p>
+            <!-- Column 2: LOCATION -->
+            <div class="footer-column">
+                <h3>📍 LOCATION</h3>
+                <p>Jaipur, Rajasthan, India</p>
+                <p>Premium Entertainment Experience</p>
+                <p>24/7 Support Available</p>
+                <p style="margin-top: 15px; font-size: 0.9em; color: #999;">
+                    GORA BROTHERS PRIVATE LIMITED<br>
+                    Jaipur, Rajasthan 302001, India
+                </p>
             </div>
-        </footer>
-    </div>
+
+            <!-- Column 3: LEGAL -->
+            <div class="footer-column">
+                <h3>⚖️ LEGAL</h3>
+                <ul>
+                    <li><a href="/privacy.html">Privacy Policy</a></li>
+                    <li><a href="/terms.html">Terms & Conditions</a></li>
+                    <li><a href="/disclaimer.html">Disclaimer</a></li>
+                    <li><a href="/responsible.html">Responsible Gaming</a></li>
+                    <li><a href="/fair-gaming.html">Fair Gaming Policy</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 4: GAMES -->
+            <div class="footer-column">
+                <h3>🎮 GAMES</h3>
+                <ul>
+                    <li><a href="/games/chase/wrapper.html">CHASE Racing</a></li>
+                    <li><a href="/games/slots/wrapper.html">Slot Machine</a></li>
+                    <li><a href="/games/blackjack/wrapper.html">Blackjack</a></li>
+                    <li><a href="/games/lucky-spin/wrapper.html">Roulette</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="footer-links">
+                <a href="/privacy.html">Privacy</a> | 
+                <a href="/terms.html">Terms</a> | 
+                <a href="/disclaimer.html">Disclaimer</a> | 
+                <a href="/responsible.html">Responsible Gaming</a> | 
+                <a href="/fair-gaming.html">Fair Gaming</a>
+            </div>
+            <p class="copyright">© 2025 GORA BROTHERS PRIVATE LIMITED. All Rights Reserved. | Play For Entertainment</p>
+            <p class="warning">⚠️ 18+ ONLY | PLAY FOR FUN | NO REAL MONEY<br>This is a free-to-play gaming website for entertainment purposes only</p>
+        </div>
+    </footer>
 
     <script>
-        let isFullscreen = false;
-
         function toggleFullscreen() {
-            const wrapper = document.getElementById('gameWrapper');
-            const btn = document.getElementById('fullscreenBtn');
             const gameContainer = document.getElementById('gameContainer');
             
             if (!document.fullscreenElement) {
@@ -407,28 +342,6 @@
         function goHome() {
             window.location.href = '/';
         }
-
-        function showFooter() {
-            document.getElementById('footerOverlay').classList.add('active');
-        }
-
-        function hideFooter() {
-            document.getElementById('footerOverlay').classList.remove('active');
-        }
-
-        // Handle escape key to close footer overlay
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                hideFooter();
-            }
-        });
-
-        // Close footer overlay when clicking outside
-        document.getElementById('footerOverlay').addEventListener('click', function(e) {
-            if (e.target === this) {
-                hideFooter();
-            }
-        });
     </script>
 </body>
 </html>
