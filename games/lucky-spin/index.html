@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GORA BROTHERS - Casino Roulette</title>
+    <title>GORA BROTHERS</title>
     <style>
         * {
             margin: 0;
@@ -32,6 +32,7 @@
             padding: 15px 20px;
             background: rgba(0, 0, 0, 0.5);
             border-radius: 8px;
+            border-bottom: 3px solid #d4af37;
         }
 
         .logo {
@@ -45,6 +46,11 @@
             text-decoration: none;
             margin: 0 15px;
             font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffd700;
         }
 
         .back-btn {
@@ -54,6 +60,11 @@
             border-radius: 4px;
             text-decoration: none;
             font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .back-btn:hover {
+            background: #ffd700;
         }
 
         .game-title {
@@ -152,7 +163,74 @@
             font-weight: bold;
         }
 
-        .bet-buttons {
+        .color-bet-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .color-btn {
+            padding: 15px;
+            border: 3px solid #666;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .color-btn.red {
+            background: #e74c3c;
+            color: white;
+            border-color: #c0392b;
+        }
+
+        .color-btn.red:hover {
+            background: #c0392b;
+            box-shadow: 0 0 15px rgba(231, 76, 60, 0.6);
+        }
+
+        .color-btn.red.active {
+            border-color: #ffd700;
+            box-shadow: 0 0 20px rgba(231, 76, 60, 0.8);
+        }
+
+        .color-btn.black {
+            background: #1a1a1a;
+            color: white;
+            border-color: #333;
+        }
+
+        .color-btn.black:hover {
+            background: #333;
+            box-shadow: 0 0 15px rgba(100, 100, 100, 0.6);
+        }
+
+        .color-btn.black.active {
+            border-color: #ffd700;
+            box-shadow: 0 0 20px rgba(100, 100, 100, 0.8);
+        }
+
+        .color-btn.green {
+            background: #2d5016;
+            color: white;
+            border-color: #1a3009;
+        }
+
+        .color-btn.green:hover {
+            background: #1a3009;
+            box-shadow: 0 0 15px rgba(45, 80, 22, 0.6);
+        }
+
+        .color-btn.green.active {
+            border-color: #ffd700;
+            box-shadow: 0 0 20px rgba(45, 80, 22, 0.8);
+        }
+
+        .amount-bet-buttons {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 10px;
@@ -216,6 +294,10 @@
             font-weight: bold;
             cursor: pointer;
             transition: all 0.3s;
+        }
+
+        .reset-button:hover {
+            background: rgba(212, 175, 55, 0.4);
         }
 
         .result-message {
@@ -285,6 +367,10 @@
             .game-title h1 {
                 font-size: 32px;
             }
+
+            .color-bet-buttons {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -298,7 +384,7 @@
                 <a href="/about.html">ABOUT</a>
                 <a href="/contact.html">CONTACT</a>
             </nav>
-            <a href="/" class="back-btn">← BACK TO LOBBY</a>
+            <a href="/" class="back-btn">← BACK</a>
         </header>
 
         <div class="game-title">
@@ -321,7 +407,7 @@
                         <div class="stat-value" id="balance">1000</div>
                     </div>
                     <div class="stat-box">
-                        <div class="stat-label">Current Bet</div>
+                        <div class="stat-label">Bet Amount</div>
                         <div class="stat-value" id="currentBet">25</div>
                     </div>
                     <div class="stat-box">
@@ -335,8 +421,17 @@
                 </div>
 
                 <div class="bet-section">
-                    <div class="bet-label">Select Bet Amount</div>
-                    <div class="bet-buttons">
+                    <div class="bet-label">🎯 SELECT COLOR TO BET ON</div>
+                    <div class="color-bet-buttons">
+                        <button class="color-btn red active" data-color="red">🔴 RED</button>
+                        <button class="color-btn black" data-color="black">⚫ BLACK</button>
+                        <button class="color-btn green" data-color="green">💚 GREEN</button>
+                    </div>
+                </div>
+
+                <div class="bet-section">
+                    <div class="bet-label">💰 SELECT BET AMOUNT</div>
+                    <div class="amount-bet-buttons">
                         <button class="bet-btn" data-bet="10">$10</button>
                         <button class="bet-btn" data-bet="25">$25</button>
                         <button class="bet-btn" data-bet="50">$50</button>
@@ -353,16 +448,21 @@
 
         <div class="info-section">
             <h2>🎮 HOW TO PLAY</h2>
-            <p>🎮 <strong>Select Your Bet:</strong> Choose from $10, $25, $50, or $100</p>
-            <p>🎮 <strong>Spin the Wheel:</strong> Click SPIN WHEEL to start the rotation</p>
-            <p>🎮 <strong>Watch the Pointer:</strong> The wheel spins and stops at a random number</p>
-            <p>🎮 <strong>Collect Prize:</strong> Win based on your bet and the number selected</p>
-            <p>🎮 <strong>Keep Playing:</strong> Use your winnings for more spins</p>
+            <p>1️⃣ <strong>Select Color:</strong> Click RED, BLACK, or GREEN to choose your bet color</p>
+            <p>2️⃣ <strong>Select Amount:</strong> Choose your bet amount ($10, $25, $50, or $100)</p>
+            <p>3️⃣ <strong>Spin the Wheel:</strong> Click SPIN WHEEL to start the rotation</p>
+            <p>4️⃣ <strong>Watch the Pointer:</strong> The wheel spins and stops at a random number</p>
+            <p>5️⃣ <strong>Collect Prize:</strong> Win if the wheel lands on your selected color!</p>
 
-            <h3>💰 ROULETTE NUMBERS</h3>
-            <p>The roulette wheel has 37 numbers: 0 (Green) and 1-36 (Red or Black)</p>
+            <h3>🎰 ROULETTE NUMBERS</h3>
+            <p><strong>Green (0):</strong> Special number - pays 35x your bet</p>
             <p><strong>Red Numbers:</strong> 1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36</p>
             <p><strong>Black Numbers:</strong> 2, 4, 6, 8, 10, 11, 13, 15, 17, 20, 22, 24, 26, 28, 29, 31, 33, 35</p>
+
+            <h3>💰 PAYOUT STRUCTURE</h3>
+            <p><strong>Red/Black Win:</strong> 2x your bet (50% chance)</p>
+            <p><strong>Green Win:</strong> 35x your bet (2.7% chance - rare!)</p>
+            <p><strong>Loss:</strong> Lose your bet amount</p>
 
             <h3>📋 GAME RULES</h3>
             <p>✅ Fair RNG: Each spin uses certified Random Number Generator</p>
@@ -398,11 +498,37 @@
 
         let balance = 1000;
         let currentBet = 25;
+        let selectedColor = 'red';
         let isSpinning = false;
         let spinCount = 0;
         let lastWin = 0;
 
         const redNumbers = [1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36];
+
+        // Color bet button handlers
+        document.querySelectorAll('.color-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                if (!isSpinning) {
+                    document.querySelectorAll('.color-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    selectedColor = this.dataset.color;
+                }
+            });
+        });
+
+        // Amount bet button handlers
+        document.querySelectorAll('.bet-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                if (!isSpinning) {
+                    document.querySelectorAll('.bet-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    currentBet = parseInt(this.dataset.bet);
+                    currentBetDisplay.textContent = currentBet;
+                }
+            });
+        });
+
+        document.querySelector('[data-bet="25"]').classList.add('active');
 
         function drawWheel(rotation = 0) {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -519,34 +645,28 @@
         function completeSpinResult(winningNumber) {
             let payout = 0;
             let message = '';
+            let won = false;
 
-            const rand = Math.random();
-            
-            if (rand < 0.05) {
-                payout = currentBet * 35;
-                message = `🎉 HIT NUMBER ${winningNumber}! WON $${payout}! 🎉`;
-            } else if (rand < 0.55) {
-                const isRed = redNumbers.includes(winningNumber);
-                const betColor = Math.random() < 0.5 ? 'RED' : 'BLACK';
-                
-                if ((isRed && betColor === 'RED') || (!isRed && betColor === 'BLACK')) {
-                    payout = currentBet * 2;
-                    message = `✨ ${betColor} WINS! WON $${payout}! ✨`;
-                } else {
-                    message = `❌ ${betColor} LOSES! Better luck next time...`;
-                    resultMessage.classList.add('loss');
-                }
+            let winningColor;
+            if (winningNumber === 0) {
+                winningColor = 'green';
+            } else if (redNumbers.includes(winningNumber)) {
+                winningColor = 'red';
             } else {
-                const isOdd = winningNumber % 2 === 1;
-                const betOdd = Math.random() < 0.5;
-                
-                if ((isOdd && betOdd) || (!isOdd && !betOdd)) {
-                    payout = currentBet * 2;
-                    message = `✨ ${isOdd ? 'ODD' : 'EVEN'} WINS! WON $${payout}! ✨`;
-                } else {
-                    message = `❌ ${isOdd ? 'ODD' : 'EVEN'} LOSES! Better luck next time...`;
-                    resultMessage.classList.add('loss');
-                }
+                winningColor = 'black';
+            }
+
+            if (selectedColor === 'green' && winningNumber === 0) {
+                payout = currentBet * 35;
+                message = `🎉 GREEN (0) WINS! 🎉 YOU WON $${payout}!`;
+                won = true;
+            } else if (selectedColor === winningColor && winningNumber !== 0) {
+                payout = currentBet * 2;
+                message = `✨ ${selectedColor.toUpperCase()} WINS! ✨ YOU WON $${payout}!`;
+                won = true;
+            } else {
+                message = `❌ ${winningColor.toUpperCase()} WINS! Better luck next time...`;
+                resultMessage.classList.add('loss');
             }
 
             balance += payout;
@@ -558,17 +678,6 @@
             isSpinning = false;
             spinBtn.disabled = false;
         }
-
-        document.querySelectorAll('.bet-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                document.querySelectorAll('.bet-btn').forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-                currentBet = parseInt(this.dataset.bet);
-                currentBetDisplay.textContent = currentBet;
-            });
-        });
-
-        document.querySelector('[data-bet="25"]').classList.add('active');
 
         spinBtn.addEventListener('click', spinWheel);
 
@@ -587,6 +696,9 @@
             spinCountDisplay.textContent = spinCount;
             document.querySelectorAll('.bet-btn').forEach(b => b.classList.remove('active'));
             document.querySelector('[data-bet="25"]').classList.add('active');
+            document.querySelectorAll('.color-btn').forEach(b => b.classList.remove('active'));
+            document.querySelector('[data-color="red"]').classList.add('active');
+            selectedColor = 'red';
             drawWheel(0);
         });
 
