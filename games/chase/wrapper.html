@@ -13,9 +13,18 @@
 
         html, body {
             width: 100%;
+            height: 100%;
             font-family: 'Arial', sans-serif;
             background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
             color: #fff;
+            overflow: hidden; /* NO outer scrollbar */
+        }
+
+        .game-wrapper {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            width: 100%;
         }
 
         /* HEADER - NOT STICKY */
@@ -28,7 +37,7 @@
             border-bottom: 3px solid #d4af37;
             z-index: 50;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-            position: static;
+            flex-shrink: 0;
         }
 
         .logo {
@@ -98,10 +107,10 @@
             box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
         }
 
-        /* GAME CONTAINER - Takes full viewport height */
+        /* GAME CONTAINER - Takes remaining space */
         .game-container {
+            flex: 1;
             width: 100%;
-            height: calc(100vh - 70px); /* Full viewport minus header */
             position: relative;
             overflow: hidden;
         }
@@ -113,13 +122,47 @@
             display: block;
         }
 
-        /* FOOTER - Below the game, visible when scrolling */
+        /* FOOTER OVERLAY - Hidden by default, shown on button click */
+        .footer-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 1000;
+            display: none;
+            overflow-y: auto;
+            padding-top: 70px;
+        }
+
+        .footer-overlay.active {
+            display: block;
+        }
+
+        .footer-close {
+            position: fixed;
+            top: 15px;
+            right: 30px;
+            background: #d4af37;
+            color: #1a1a1a;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 1001;
+            font-size: 14px;
+        }
+
+        .footer-close:hover {
+            background: #ffd700;
+        }
+
         footer {
             background: #000;
             color: #fff;
-            border-top: 3px solid #d4af37;
             padding: 40px 20px;
-            position: static;
         }
 
         .footer-container {
@@ -202,28 +245,22 @@
             font-weight: bold;
         }
 
-        /* FULLSCREEN MODE */
-        .fullscreen-mode header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: rgba(0, 0, 0, 0.95);
-            z-index: 10001;
+        /* Info Button */
+        .btn-info {
+            background: rgba(212, 175, 55, 0.2);
+            color: #d4af37;
+            padding: 10px 20px;
+            border: 2px solid #d4af37;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 13px;
         }
 
-        .fullscreen-mode .game-container {
-            position: fixed;
-            top: 70px;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            height: calc(100vh - 70px);
-            z-index: 10000;
-        }
-
-        .fullscreen-mode footer {
-            display: none;
+        .btn-info:hover {
+            background: rgba(212, 175, 55, 0.4);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
         }
 
         /* RESPONSIVE */
@@ -243,13 +280,9 @@
                 justify-content: space-between;
             }
 
-            .btn-back, .btn-fullscreen {
-                font-size: 12px;
-                padding: 8px 15px;
-            }
-
-            footer {
-                padding: 20px 15px;
+            .btn-back, .btn-fullscreen, .btn-info {
+                font-size: 11px;
+                padding: 8px 12px;
             }
 
             .footer-container {
@@ -279,6 +312,7 @@
             </nav>
             <div class="header-buttons">
                 <button class="btn-back" onclick="goHome()">← BACK TO HOME</button>
+                <button class="btn-info" onclick="showFooter()">ℹ️ INFO</button>
                 <button class="btn-fullscreen" id="fullscreenBtn" onclick="toggleFullscreen()">⛶ FULLSCREEN</button>
             </div>
         </header>
@@ -286,7 +320,11 @@
         <div class="game-container" id="gameContainer">
             <iframe src="index.html" allow="fullscreen"></iframe>
         </div>
+    </div>
 
+    <!-- Footer Overlay -->
+    <div class="footer-overlay" id="footerOverlay">
+        <button class="footer-close" onclick="hideFooter()">✕ CLOSE</button>
         <footer>
             <div class="footer-container">
                 <!-- Column 1: GORA BROTHERS -->
@@ -355,38 +393,40 @@
         function toggleFullscreen() {
             const wrapper = document.getElementById('gameWrapper');
             const btn = document.getElementById('fullscreenBtn');
+            const gameContainer = document.getElementById('gameContainer');
             
-            if (isFullscreen) {
-                exitFullscreen();
+            if (!document.fullscreenElement) {
+                gameContainer.requestFullscreen().catch(err => {
+                    console.log('Fullscreen error:', err);
+                });
             } else {
-                wrapper.classList.add('fullscreen-mode');
-                btn.textContent = '⛶ EXIT FULLSCREEN';
-                document.body.style.overflow = 'hidden';
-                isFullscreen = true;
+                document.exitFullscreen();
             }
-        }
-
-        function exitFullscreen() {
-            const wrapper = document.getElementById('gameWrapper');
-            const btn = document.getElementById('fullscreenBtn');
-            
-            wrapper.classList.remove('fullscreen-mode');
-            btn.textContent = '⛶ FULLSCREEN';
-            document.body.style.overflow = 'auto';
-            isFullscreen = false;
         }
 
         function goHome() {
-            if (isFullscreen) {
-                exitFullscreen();
-            }
             window.location.href = '/';
         }
 
-        // Handle escape key to exit fullscreen
+        function showFooter() {
+            document.getElementById('footerOverlay').classList.add('active');
+        }
+
+        function hideFooter() {
+            document.getElementById('footerOverlay').classList.remove('active');
+        }
+
+        // Handle escape key to close footer overlay
         document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && isFullscreen) {
-                exitFullscreen();
+            if (e.key === 'Escape') {
+                hideFooter();
+            }
+        });
+
+        // Close footer overlay when clicking outside
+        document.getElementById('footerOverlay').addEventListener('click', function(e) {
+            if (e.target === this) {
+                hideFooter();
             }
         });
     </script>
