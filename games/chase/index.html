@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GORA BROTHERS - CHASE Racing Game</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <style>
+        .game-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+        
+        .game-header {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--gold);
+        }
+        
+        .game-header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            font-family: 'Georgia', serif;
+        }
+        
+        .game-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .game-info, .how-to-play {
+            background: rgba(212, 175, 55, 0.1);
+            border: 2px solid var(--gold);
+            border-radius: 8px;
+            padding: 30px;
+            color: var(--text);
+        }
+        
+        .game-info h2, .how-to-play h2 {
+            color: var(--gold);
+            font-family: 'Georgia', serif;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        
+        .game-info p, .how-to-play p {
+            line-height: 1.8;
+            margin-bottom: 15px;
+            color: var(--text-light);
+        }
+        
+        .game-info ul, .how-to-play ol {
+            list-style-position: inside;
+            margin-left: 20px;
+        }
+        
+        .game-info li, .how-to-play li {
+            margin-bottom: 10px;
+            color: var(--text-light);
+        }
+        
+        .game-history {
+            background: rgba(212, 175, 55, 0.1);
+            border: 2px solid var(--gold);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 40px;
+            color: var(--text);
+        }
+        
+        .game-history h2 {
+            color: var(--gold);
+            font-family: 'Georgia', serif;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        
+        .game-history p {
+            line-height: 1.8;
+            margin-bottom: 15px;
+            color: var(--text-light);
+        }
+        
+        .play-button {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--bg);
+            padding: 15px 40px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .play-button:hover {
+            background: #e5c158;
+            transform: scale(1.05);
+        }
+        
+        .back-button {
+            display: inline-block;
+            color: var(--gold);
+            text-decoration: none;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+        }
+        
+        .back-button:hover {
+            color: #e5c158;
+        }
+        
+        @media (max-width: 768px) {
+            .game-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .game-header h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo">🏎️ GORA BROTHERS</h1>
+                <nav class="nav">
+                    <a href="../../index.html">HOME</a>
+                    <a href="../../index.html#games">GAMES</a>
+                    <a href="../../about.php">ABOUT</a>
+                    <a href="../../contact.php">CONTACT</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="game-container">
+        <a href="../../index.html" class="back-button">← Back to Home</a>
+        
+        <div class="game-header">
+            <h1>🏎️ CHASE</h1>
+            <p>Futuristic Racing Game</p>
+        </div>
+
+        <div class="game-content">
+            <div class="game-info">
+                <h2>Game Details</h2>
+                <p><strong>Game Type:</strong> Futuristic Racing</p>
+                <p><strong>Platform:</strong> Web-Based 3D Racing</p>
+                <p><strong>Players:</strong> Single Player</p>
+                <p><strong>Difficulty:</strong> Progressive</p>
+                
+                <h3 style="color: var(--gold); margin-top: 20px;">Features:</h3>
+                <ul>
+                    <li>3D Futuristic Racing Environment</li>
+                    <li>Multiple Challenging Tracks</li>
+                    <li>Smooth Controls & Physics</li>
+                    <li>Progressive Difficulty Levels</li>
+                    <li>High Score Tracking</li>
+                    <li>Immersive Gaming Experience</li>
+                </ul>
+                
+                <button class="play-button" onclick="alert('Game Loading...')">PLAY NOW</button>
+            </div>
+
+            <div class="how-to-play">
+                <h2>How to Play</h2>
+                <ol>
+                    <li><strong>Start the Game:</strong> Click the PLAY button to begin your racing adventure</li>
+                    <li><strong>Controls:</strong> Use arrow keys or WASD to steer your vehicle</li>
+                    <li><strong>Accelerate:</strong> Hold spacebar or up arrow to speed up</li>
+                    <li><strong>Navigate Tracks:</strong> Follow the glowing path through challenging courses</li>
+                    <li><strong>Avoid Obstacles:</strong> Steer clear of walls and barriers</li>
+                    <li><strong>Maintain Speed:</strong> Balance speed with control for best performance</li>
+                    <li><strong>Complete Laps:</strong> Finish each track to unlock the next level</li>
+                    <li><strong>Achieve High Scores:</strong> Compete for the best completion times</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="game-history">
+            <h2>Game History & Background</h2>
+            <p><strong>CHASE</strong> is a futuristic racing game that brings the thrill of high-speed racing to your browser. Inspired by classic arcade racing games and modern 3D graphics, CHASE combines fast-paced gameplay with challenging track designs.</p>
+            
+            <p>The game features a sleek, neon-lit environment where players navigate through intricate tracks at breakneck speeds. Each track presents unique challenges, from sharp turns to narrow passages, requiring both skill and precision.</p>
+            
+            <p><strong>Game Evolution:</strong> CHASE has evolved from simple 2D racing games to a sophisticated 3D experience. The game incorporates realistic physics, dynamic lighting, and immersive sound design to create an engaging racing environment.</p>
+            
+            <p><strong>Gameplay Mechanics:</strong> The core mechanic revolves around speed control and precision steering. Players must balance acceleration with careful navigation to achieve the fastest completion times. The progressive difficulty system ensures that both beginners and experienced players find the game challenging and rewarding.</p>
+            
+            <p><strong>Community & Competition:</strong> CHASE features a high score system that allows players to compete globally. The leaderboard tracks the fastest completion times, encouraging players to improve their skills and achieve personal bests.</p>
+            
+            <p><strong>Tips for Success:</strong>
+                <ul style="margin-top: 10px;">
+                    <li>Learn each track layout before attempting speed runs</li>
+                    <li>Practice smooth steering to maintain momentum</li>
+                    <li>Use the racing line to optimize your path</li>
+                    <li>Build muscle memory for consistent performance</li>
+                    <li>Study other players' strategies from the leaderboard</li>
+                </ul>
+            </p>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>QUICK LINKS</h4>
+                <ul>
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="../../index.html#games">Games</a></li>
+                    <li><a href="../../about.php">About Us</a></li>
+                    <li><a href="../../contact.php">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>LEGAL</h4>
+                <ul>
+                    <li><a href="../../privacy.php">Privacy Policy</a></li>
+                    <li><a href="../../terms.php">Terms & Conditions</a></li>
+                    <li><a href="../../disclaimer.php">Disclaimer</a></li>
+                    <li><a href="../../community.php">Community Rules</a></li>
+                    <li><a href="../../responsible-gaming.php">Responsible Gaming</a></li>
+                    <li><a href="../../fair-gaming.php">Fair Gaming Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>COMPANY</h4>
+                <p><strong>GORA BROTHERS PRIVATE LIMITED</strong></p>
+                <p>CIN: U63030RJ2020PTC068805</p>
+                <p>GST: 08AAICG3022F1ZY</p>
+                <p>PAN: AAICG3022F</p>
+                <p>Address: House No. 111 Nayaganv, Mojmabad, Jaipur, Rajasthan, India 302001</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 GORA BROTHERS. All rights reserved. | Last Updated: January 13, 2026</p>
+            <p style="font-size: 0.9em; margin-top: 10px;">⚠️ This is a free entertainment platform. No real money involved. Players must be 18+ years old.</p>
+        </div>
+    </footer>
+</body>
+</html>

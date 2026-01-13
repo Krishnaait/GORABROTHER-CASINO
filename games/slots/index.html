@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GORA BROTHERS - Slot Machine Game</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <style>
+        .game-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+        
+        .game-header {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--gold);
+        }
+        
+        .game-header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            font-family: 'Georgia', serif;
+        }
+        
+        .game-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .game-info, .how-to-play {
+            background: rgba(212, 175, 55, 0.1);
+            border: 2px solid var(--gold);
+            border-radius: 8px;
+            padding: 30px;
+            color: var(--text);
+        }
+        
+        .game-info h2, .how-to-play h2 {
+            color: var(--gold);
+            font-family: 'Georgia', serif;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        
+        .game-info p, .how-to-play p {
+            line-height: 1.8;
+            margin-bottom: 15px;
+            color: var(--text-light);
+        }
+        
+        .game-info ul, .how-to-play ol {
+            list-style-position: inside;
+            margin-left: 20px;
+        }
+        
+        .game-info li, .how-to-play li {
+            margin-bottom: 10px;
+            color: var(--text-light);
+        }
+        
+        .winning-combinations {
+            background: rgba(212, 175, 55, 0.1);
+            border: 2px solid var(--gold);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 40px;
+            color: var(--text);
+        }
+        
+        .winning-combinations h2 {
+            color: var(--gold);
+            font-family: 'Georgia', serif;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        
+        .combinations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .combination-card {
+            background: rgba(26, 26, 26, 0.5);
+            border: 1px solid var(--gold);
+            border-radius: 5px;
+            padding: 15px;
+            text-align: center;
+        }
+        
+        .combination-card strong {
+            color: var(--gold);
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .game-history {
+            background: rgba(212, 175, 55, 0.1);
+            border: 2px solid var(--gold);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 40px;
+            color: var(--text);
+        }
+        
+        .game-history h2 {
+            color: var(--gold);
+            font-family: 'Georgia', serif;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        
+        .game-history p {
+            line-height: 1.8;
+            margin-bottom: 15px;
+            color: var(--text-light);
+        }
+        
+        .play-button {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--bg);
+            padding: 15px 40px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .play-button:hover {
+            background: #e5c158;
+            transform: scale(1.05);
+        }
+        
+        .back-button {
+            display: inline-block;
+            color: var(--gold);
+            text-decoration: none;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+        }
+        
+        .back-button:hover {
+            color: #e5c158;
+        }
+        
+        @media (max-width: 768px) {
+            .game-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .game-header h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo">🎰 GORA BROTHERS</h1>
+                <nav class="nav">
+                    <a href="../../index.html">HOME</a>
+                    <a href="../../index.html#games">GAMES</a>
+                    <a href="../../about.php">ABOUT</a>
+                    <a href="../../contact.php">CONTACT</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="game-container">
+        <a href="../../index.html" class="back-button">← Back to Home</a>
+        
+        <div class="game-header">
+            <h1>🎰 SLOT MACHINE</h1>
+            <p>Classic Casino Slots Experience</p>
+        </div>
+
+        <div class="game-content">
+            <div class="game-info">
+                <h2>Game Details</h2>
+                <p><strong>Game Type:</strong> Classic Slot Machine</p>
+                <p><strong>Reels:</strong> 3 Reels</p>
+                <p><strong>Players:</strong> Single Player</p>
+                <p><strong>Difficulty:</strong> Easy to Medium</p>
+                
+                <h3 style="color: var(--gold); margin-top: 20px;">Features:</h3>
+                <ul>
+                    <li>3-Reel Classic Slots</li>
+                    <li>Multiple Symbol Combinations</li>
+                    <li>Virtual Credit System</li>
+                    <li>Smooth Animations</li>
+                    <li>Fair Random Number Generation</li>
+                    <li>Instant Payouts</li>
+                </ul>
+                
+                <button class="play-button" onclick="alert('Game Loading...')">PLAY NOW</button>
+            </div>
+
+            <div class="how-to-play">
+                <h2>How to Play</h2>
+                <ol>
+                    <li><strong>Start:</strong> Click PLAY to launch the Slot Machine game</li>
+                    <li><strong>Place Bet:</strong> Select your bet amount (typically 1-10 credits)</li>
+                    <li><strong>Spin Reels:</strong> Click the SPIN button to start the reels</li>
+                    <li><strong>Watch Reels:</strong> The three reels will spin and stop randomly</li>
+                    <li><strong>Check Results:</strong> If symbols match, you score points</li>
+                    <li><strong>Collect Payouts:</strong> Matching combinations award instant credits</li>
+                    <li><strong>Continue Playing:</strong> Use your credits to spin again</li>
+                    <li><strong>Reset:</strong> Use RESET button to restore your credit balance</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="winning-combinations">
+            <h2>Winning Combinations</h2>
+            <div class="combinations-grid">
+                <div class="combination-card">
+                    <strong>🍎 🍎 🍎</strong>
+                    <p>Three Apples = 50 Credits</p>
+                </div>
+                <div class="combination-card">
+                    <strong>🍊 🍊 🍊</strong>
+                    <p>Three Oranges = 50 Credits</p>
+                </div>
+                <div class="combination-card">
+                    <strong>🍋 🍋 🍋</strong>
+                    <p>Three Lemons = 50 Credits</p>
+                </div>
+                <div class="combination-card">
+                    <strong>🍇 🍇 🍇</strong>
+                    <p>Three Grapes = 75 Credits</p>
+                </div>
+                <div class="combination-card">
+                    <strong>⭐ ⭐ ⭐</strong>
+                    <p>Three Stars = 100 Credits</p>
+                </div>
+                <div class="combination-card">
+                    <strong>💎 💎 💎</strong>
+                    <p>Three Diamonds = 150 Credits</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-history">
+            <h2>Game History & Background</h2>
+            <p><strong>Slot Machines</strong> have a rich history dating back to the late 19th century. The first mechanical slot machine was invented in 1894, revolutionizing the gaming industry. Today, digital slot machines like our SLOT MACHINE game bring the classic casino experience to players worldwide.</p>
+            
+            <p><strong>Evolution:</strong> From mechanical reels to digital displays, slot machines have continuously evolved. Our game combines the simplicity of classic slots with modern graphics and fair gaming mechanics.</p>
+            
+            <p><strong>How It Works:</strong> Each spin uses a Random Number Generator (RNG) to ensure fair and unpredictable results. The RNG guarantees that every spin is independent and has equal probability of landing on any combination.</p>
+            
+            <p><strong>Game Strategy:</strong> While slots are primarily games of chance, players can optimize their experience by:
+                <ul style="margin-top: 10px;">
+                    <li>Understanding the payout structure</li>
+                    <li>Managing their credit balance wisely</li>
+                    <li>Playing consistently for better odds</li>
+                    <li>Enjoying the entertainment value</li>
+                </ul>
+            </p>
+            
+            <p><strong>Fair Gaming:</strong> Our slot machine uses certified RNG algorithms to ensure complete fairness. Every symbol has an equal chance of appearing on each reel, making the game transparent and trustworthy.</p>
+            
+            <p><strong>Entertainment Focus:</strong> Remember, slot machines are designed for entertainment purposes. The primary goal is to enjoy the gaming experience and have fun!</p>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>QUICK LINKS</h4>
+                <ul>
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="../../index.html#games">Games</a></li>
+                    <li><a href="../../about.php">About Us</a></li>
+                    <li><a href="../../contact.php">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>LEGAL</h4>
+                <ul>
+                    <li><a href="../../privacy.php">Privacy Policy</a></li>
+                    <li><a href="../../terms.php">Terms & Conditions</a></li>
+                    <li><a href="../../disclaimer.php">Disclaimer</a></li>
+                    <li><a href="../../community.php">Community Rules</a></li>
+                    <li><a href="../../responsible-gaming.php">Responsible Gaming</a></li>
+                    <li><a href="../../fair-gaming.php">Fair Gaming Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>COMPANY</h4>
+                <p><strong>GORA BROTHERS PRIVATE LIMITED</strong></p>
+                <p>CIN: U63030RJ2020PTC068805</p>
+                <p>GST: 08AAICG3022F1ZY</p>
+                <p>PAN: AAICG3022F</p>
+                <p>Address: House No. 111 Nayaganv, Mojmabad, Jaipur, Rajasthan, India 302001</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 GORA BROTHERS. All rights reserved. | Last Updated: January 13, 2026</p>
+            <p style="font-size: 0.9em; margin-top: 10px;">⚠️ This is a free entertainment platform. No real money involved. Players must be 18+ years old.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GORA BROTHERS - Blackjack Game</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <style>
+        .game-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+        
+        .game-header {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--gold);
+        }
+        
+        .game-header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            font-family: 'Georgia', serif;
+        }
+        
+        .game-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .game-info, .how-to-play {
+            background: rgba(212, 175, 55, 0.1);
+            border: 2px solid var(--gold);
+            border-radius: 8px;
+            padding: 30px;
+            color: var(--text);
+        }
+        
+        .game-info h2, .how-to-play h2 {
+            color: var(--gold);
+            font-family: 'Georgia', serif;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        
+        .game-info p, .how-to-play p {
+            line-height: 1.8;
+            margin-bottom: 15px;
+            color: var(--text-light);
+        }
+        
+        .game-info ul, .how-to-play ol {
+            list-style-position: inside;
+            margin-left: 20px;
+        }
+        
+        .game-info li, .how-to-play li {
+            margin-bottom: 10px;
+            color: var(--text-light);
+        }
+        
+        .card-values {
+            background: rgba(212, 175, 55, 0.1);
+            border: 2px solid var(--gold);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 40px;
+            color: var(--text);
+        }
+        
+        .card-values h2 {
+            color: var(--gold);
+            font-family: 'Georgia', serif;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .card-info {
+            background: rgba(26, 26, 26, 0.5);
+            border: 1px solid var(--gold);
+            border-radius: 5px;
+            padding: 15px;
+            text-align: center;
+        }
+        
+        .card-info strong {
+            color: var(--gold);
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        
+        .game-history {
+            background: rgba(212, 175, 55, 0.1);
+            border: 2px solid var(--gold);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 40px;
+            color: var(--text);
+        }
+        
+        .game-history h2 {
+            color: var(--gold);
+            font-family: 'Georgia', serif;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        
+        .game-history p {
+            line-height: 1.8;
+            margin-bottom: 15px;
+            color: var(--text-light);
+        }
+        
+        .strategy-box {
+            background: rgba(212, 175, 55, 0.05);
+            border-left: 4px solid var(--gold);
+            padding: 15px;
+            margin-top: 15px;
+        }
+        
+        .play-button {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--bg);
+            padding: 15px 40px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .play-button:hover {
+            background: #e5c158;
+            transform: scale(1.05);
+        }
+        
+        .back-button {
+            display: inline-block;
+            color: var(--gold);
+            text-decoration: none;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+        }
+        
+        .back-button:hover {
+            color: #e5c158;
+        }
+        
+        @media (max-width: 768px) {
+            .game-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .game-header h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo">🃏 GORA BROTHERS</h1>
+                <nav class="nav">
+                    <a href="../../index.html">HOME</a>
+                    <a href="../../index.html#games">GAMES</a>
+                    <a href="../../about.php">ABOUT</a>
+                    <a href="../../contact.php">CONTACT</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="game-container">
+        <a href="../../index.html" class="back-button">← Back to Home</a>
+        
+        <div class="game-header">
+            <h1>🃏 BLACKJACK</h1>
+            <p>Classic Card Game of Strategy</p>
+        </div>
+
+        <div class="game-content">
+            <div class="game-info">
+                <h2>Game Details</h2>
+                <p><strong>Game Type:</strong> Card Game</p>
+                <p><strong>Deck:</strong> Standard 52-Card Deck</p>
+                <p><strong>Players:</strong> Single Player vs Dealer</p>
+                <p><strong>Difficulty:</strong> Medium</p>
+                
+                <h3 style="color: var(--gold); margin-top: 20px;">Features:</h3>
+                <ul>
+                    <li>Realistic Dealer AI</li>
+                    <li>Strategic Gameplay</li>
+                    <li>Hit, Stand, Double Down Options</li>
+                    <li>Blackjack Detection</li>
+                    <li>Push (Tie) Handling</li>
+                    <li>Score Tracking</li>
+                </ul>
+                
+                <button class="play-button" onclick="alert('Game Loading...')">PLAY NOW</button>
+            </div>
+
+            <div class="how-to-play">
+                <h2>How to Play</h2>
+                <ol>
+                    <li><strong>Deal:</strong> Click PLAY to start a new game</li>
+                    <li><strong>Receive Cards:</strong> You and the dealer get 2 cards each</li>
+                    <li><strong>Evaluate Hand:</strong> Calculate your card total</li>
+                    <li><strong>Choose Action:</strong> HIT (get another card) or STAND (keep total)</li>
+                    <li><strong>Avoid Bust:</strong> Don't exceed 21 or you lose</li>
+                    <li><strong>Dealer Plays:</strong> Dealer reveals cards and plays by fixed rules</li>
+                    <li><strong>Compare Hands:</strong> Highest hand under 21 wins</li>
+                    <li><strong>Collect Winnings:</strong> Win equals your bet amount</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="card-values">
+            <h2>Card Values</h2>
+            <div class="card-grid">
+                <div class="card-info">
+                    <strong>Number Cards</strong>
+                    <p>2-10 = Face Value</p>
+                </div>
+                <div class="card-info">
+                    <strong>Face Cards</strong>
+                    <p>J, Q, K = 10 Points</p>
+                </div>
+                <div class="card-info">
+                    <strong>Ace Card</strong>
+                    <p>A = 1 or 11 Points</p>
+                </div>
+                <div class="card-info">
+                    <strong>Blackjack</strong>
+                    <p>Ace + 10 = 21 (Instant Win)</p>
+                </div>
+                <div class="card-info">
+                    <strong>Bust</strong>
+                    <p>Total > 21 = Automatic Loss</p>
+                </div>
+                <div class="card-info">
+                    <strong>Push</strong>
+                    <p>Tie with Dealer = No Win/Loss</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-history">
+            <h2>Game History & Strategy</h2>
+            <p><strong>Blackjack</strong> is one of the most popular casino card games in the world. Its origins trace back to 17th-century France, where it was known as "Vingt-et-Un" (Twenty-One). The modern version of Blackjack became standardized in casinos during the 20th century.</p>
+            
+            <p><strong>Game Objective:</strong> The primary goal is to beat the dealer by getting a hand value closer to 21 without exceeding it. Players can use strategy and decision-making to improve their odds against the dealer.</p>
+            
+            <p><strong>Basic Strategy:</strong> Successful Blackjack players use basic strategy to make optimal decisions:
+                <div class="strategy-box">
+                    <strong>Key Strategy Points:</strong>
+                    <ul style="margin-top: 10px;">
+                        <li>Always split Aces and 8s</li>
+                        <li>Never split 10s or 5s</li>
+                        <li>Hit on 16 or less if dealer shows 7-Ace</li>
+                        <li>Stand on 17 or higher</li>
+                        <li>Use Ace flexibility (1 or 11) wisely</li>
+                        <li>Consider dealer's up card when deciding</li>
+                    </ul>
+                </div>
+            </p>
+            
+            <p><strong>Probability & Odds:</strong> Understanding probability is crucial in Blackjack. Each decision impacts your odds of winning. The game combines luck with skill, making it engaging for both casual and experienced players.</p>
+            
+            <p><strong>Entertainment Value:</strong> Blackjack offers strategic depth that keeps players engaged. The balance between chance and decision-making creates an exciting gaming experience where players feel they have control over outcomes.</p>
+            
+            <p><strong>Tips for Success:</strong>
+                <ul style="margin-top: 10px;">
+                    <li>Learn basic strategy before playing</li>
+                    <li>Manage your expectations</li>
+                    <li>Play for entertainment, not profit</li>
+                    <li>Study dealer patterns and adjust accordingly</li>
+                    <li>Practice consistently to improve skills</li>
+                </ul>
+            </p>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>QUICK LINKS</h4>
+                <ul>
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="../../index.html#games">Games</a></li>
+                    <li><a href="../../about.php">About Us</a></li>
+                    <li><a href="../../contact.php">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>LEGAL</h4>
+                <ul>
+                    <li><a href="../../privacy.php">Privacy Policy</a></li>
+                    <li><a href="../../terms.php">Terms & Conditions</a></li>
+                    <li><a href="../../disclaimer.php">Disclaimer</a></li>
+                    <li><a href="../../community.php">Community Rules</a></li>
+                    <li><a href="../../responsible-gaming.php">Responsible Gaming</a></li>
+                    <li><a href="../../fair-gaming.php">Fair Gaming Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>COMPANY</h4>
+                <p><strong>GORA BROTHERS PRIVATE LIMITED</strong></p>
+                <p>CIN: U63030RJ2020PTC068805</p>
+                <p>GST: 08AAICG3022F1ZY</p>
+                <p>PAN: AAICG3022F</p>
+                <p>Address: House No. 111 Nayaganv, Mojmabad, Jaipur, Rajasthan, India 302001</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 GORA BROTHERS. All rights reserved. | Last Updated: January 13, 2026</p>
+            <p style="font-size: 0.9em; margin-top: 10px;">⚠️ This is a free entertainment platform. No real money involved. Players must be 18+ years old.</p>
+        </div>
+    </footer>
+</body>
+</html>

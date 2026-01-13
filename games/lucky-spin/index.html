@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GORA BROTHERS - Lucky Spin Game</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <style>
+        .game-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+        
+        .game-header {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--gold);
+        }
+        
+        .game-header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            font-family: 'Georgia', serif;
+        }
+        
+        .game-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .game-info, .how-to-play {
+            background: rgba(212, 175, 55, 0.1);
+            border: 2px solid var(--gold);
+            border-radius: 8px;
+            padding: 30px;
+            color: var(--text);
+        }
+        
+        .game-info h2, .how-to-play h2 {
+            color: var(--gold);
+            font-family: 'Georgia', serif;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        
+        .game-info p, .how-to-play p {
+            line-height: 1.8;
+            margin-bottom: 15px;
+            color: var(--text-light);
+        }
+        
+        .game-info ul, .how-to-play ol {
+            list-style-position: inside;
+            margin-left: 20px;
+        }
+        
+        .game-info li, .how-to-play li {
+            margin-bottom: 10px;
+            color: var(--text-light);
+        }
+        
+        .prize-segments {
+            background: rgba(212, 175, 55, 0.1);
+            border: 2px solid var(--gold);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 40px;
+            color: var(--text);
+        }
+        
+        .prize-segments h2 {
+            color: var(--gold);
+            font-family: 'Georgia', serif;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        
+        .segments-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .segment-card {
+            background: rgba(26, 26, 26, 0.5);
+            border: 1px solid var(--gold);
+            border-radius: 5px;
+            padding: 15px;
+            text-align: center;
+        }
+        
+        .segment-card strong {
+            color: var(--gold);
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        
+        .game-history {
+            background: rgba(212, 175, 55, 0.1);
+            border: 2px solid var(--gold);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 40px;
+            color: var(--text);
+        }
+        
+        .game-history h2 {
+            color: var(--gold);
+            font-family: 'Georgia', serif;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        
+        .game-history p {
+            line-height: 1.8;
+            margin-bottom: 15px;
+            color: var(--text-light);
+        }
+        
+        .play-button {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--bg);
+            padding: 15px 40px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .play-button:hover {
+            background: #e5c158;
+            transform: scale(1.05);
+        }
+        
+        .back-button {
+            display: inline-block;
+            color: var(--gold);
+            text-decoration: none;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+        }
+        
+        .back-button:hover {
+            color: #e5c158;
+        }
+        
+        @media (max-width: 768px) {
+            .game-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .game-header h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo">🎡 GORA BROTHERS</h1>
+                <nav class="nav">
+                    <a href="../../index.html">HOME</a>
+                    <a href="../../index.html#games">GAMES</a>
+                    <a href="../../about.php">ABOUT</a>
+                    <a href="../../contact.php">CONTACT</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="game-container">
+        <a href="../../index.html" class="back-button">← Back to Home</a>
+        
+        <div class="game-header">
+            <h1>🎡 LUCKY SPIN</h1>
+            <p>Wheel of Fortune Game</p>
+        </div>
+
+        <div class="game-content">
+            <div class="game-info">
+                <h2>Game Details</h2>
+                <p><strong>Game Type:</strong> Wheel Spin Game</p>
+                <p><strong>Segments:</strong> 12 Prize Segments</p>
+                <p><strong>Players:</strong> Single Player</p>
+                <p><strong>Difficulty:</strong> Easy</p>
+                
+                <h3 style="color: var(--gold); margin-top: 20px;">Features:</h3>
+                <ul>
+                    <li>Ornate Spinning Wheel</li>
+                    <li>Multiple Prize Segments</li>
+                    <li>Smooth Animations</li>
+                    <li>Fair Random Selection</li>
+                    <li>Instant Results</li>
+                    <li>Credit Rewards</li>
+                </ul>
+                
+                <button class="play-button" onclick="alert('Game Loading...')">PLAY NOW</button>
+            </div>
+
+            <div class="how-to-play">
+                <h2>How to Play</h2>
+                <ol>
+                    <li><strong>Start Game:</strong> Click PLAY to launch Lucky Spin</li>
+                    <li><strong>Place Bet:</strong> Select your bet amount (1-10 credits)</li>
+                    <li><strong>Spin Wheel:</strong> Click the SPIN button to rotate the wheel</li>
+                    <li><strong>Watch Rotation:</strong> The wheel spins rapidly and slows down</li>
+                    <li><strong>Landing Segment:</strong> The pointer indicates your winning segment</li>
+                    <li><strong>Collect Prize:</strong> Instant credit payout based on segment</li>
+                    <li><strong>Repeat:</strong> Use remaining credits to spin again</li>
+                    <li><strong>Reset:</strong> Use RESET to restore your credit balance</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="prize-segments">
+            <h2>Prize Segments</h2>
+            <div class="segments-grid">
+                <div class="segment-card">
+                    <strong>Segment 1</strong>
+                    <p>25 Credits</p>
+                </div>
+                <div class="segment-card">
+                    <strong>Segment 2</strong>
+                    <p>50 Credits</p>
+                </div>
+                <div class="segment-card">
+                    <strong>Segment 3</strong>
+                    <p>75 Credits</p>
+                </div>
+                <div class="segment-card">
+                    <strong>Segment 4</strong>
+                    <p>100 Credits</p>
+                </div>
+                <div class="segment-card">
+                    <strong>Segment 5</strong>
+                    <p>125 Credits</p>
+                </div>
+                <div class="segment-card">
+                    <strong>Segment 6</strong>
+                    <p>150 Credits</p>
+                </div>
+                <div class="segment-card">
+                    <strong>Segment 7</strong>
+                    <p>175 Credits</p>
+                </div>
+                <div class="segment-card">
+                    <strong>Segment 8</strong>
+                    <p>200 Credits</p>
+                </div>
+                <div class="segment-card">
+                    <strong>Segment 9</strong>
+                    <p>250 Credits</p>
+                </div>
+                <div class="segment-card">
+                    <strong>Segment 10</strong>
+                    <p>300 Credits</p>
+                </div>
+                <div class="segment-card">
+                    <strong>Segment 11</strong>
+                    <p>350 Credits</p>
+                </div>
+                <div class="segment-card">
+                    <strong>Segment 12</strong>
+                    <p>500 Credits</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-history">
+            <h2>Game History & Strategy</h2>
+            <p><strong>Lucky Spin</strong> is inspired by the classic "Wheel of Fortune" concept that has entertained audiences for centuries. From ancient carnival wheels to modern casino games, spinning wheels have always represented chance and excitement.</p>
+            
+            <p><strong>Game Mechanics:</strong> Our Lucky Spin uses a sophisticated Random Number Generator to ensure each spin has equal probability of landing on any segment. The wheel's rotation speed and deceleration create an engaging visual experience while maintaining complete fairness.</p>
+            
+            <p><strong>Prize Distribution:</strong> The 12 segments offer varying prize amounts, creating different probability scenarios. Players can strategize by understanding the distribution and managing their bets accordingly.</p>
+            
+            <p><strong>Winning Strategy:</strong>
+                <ul style="margin-top: 10px;">
+                    <li>Understand the probability of each segment</li>
+                    <li>Manage your credit balance wisely</li>
+                    <li>Set realistic expectations for wins</li>
+                    <li>Play consistently for entertainment</li>
+                    <li>Know when to stop and enjoy the experience</li>
+                </ul>
+            </p>
+            
+            <p><strong>Fair Gaming:</strong> Lucky Spin uses certified RNG algorithms to guarantee fair outcomes. Every segment has an equal chance of being selected on each spin, making the game transparent and trustworthy for all players.</p>
+            
+            <p><strong>Entertainment Focus:</strong> The primary purpose of Lucky Spin is entertainment. The excitement of watching the wheel spin and the anticipation of the result create an engaging gaming experience. Remember to play responsibly and enjoy the game for what it is—pure entertainment!</p>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>QUICK LINKS</h4>
+                <ul>
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="../../index.html#games">Games</a></li>
+                    <li><a href="../../about.php">About Us</a></li>
+                    <li><a href="../../contact.php">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>LEGAL</h4>
+                <ul>
+                    <li><a href="../../privacy.php">Privacy Policy</a></li>
+                    <li><a href="../../terms.php">Terms & Conditions</a></li>
+                    <li><a href="../../disclaimer.php">Disclaimer</a></li>
+                    <li><a href="../../community.php">Community Rules</a></li>
+                    <li><a href="../../responsible-gaming.php">Responsible Gaming</a></li>
+                    <li><a href="../../fair-gaming.php">Fair Gaming Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>COMPANY</h4>
+                <p><strong>GORA BROTHERS PRIVATE LIMITED</strong></p>
+                <p>CIN: U63030RJ2020PTC068805</p>
+                <p>GST: 08AAICG3022F1ZY</p>
+                <p>PAN: AAICG3022F</p>
+                <p>Address: House No. 111 Nayaganv, Mojmabad, Jaipur, Rajasthan, India 302001</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 GORA BROTHERS. All rights reserved. | Last Updated: January 13, 2026</p>
+            <p style="font-size: 0.9em; margin-top: 10px;">⚠️ This is a free entertainment platform. No real money involved. Players must be 18+ years old.</p>
+        </div>
+    </footer>
+</body>
+</html>
