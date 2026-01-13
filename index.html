@@ -3,230 +3,482 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="GORA BROTHERS - Play Free Casino Games Online. Enjoy CHASE Racing, Slot Machine, Blackjack, and Lucky Spin. 100% Free, No Real Money, No Login Required.">
-    <meta name="keywords" content="casino games, free games, slots, blackjack, racing game, social gaming">
     <title>GORA BROTHERS - Play Free Casino Games Online</title>
-    <link rel="stylesheet" href="css/style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: #fff;
+            min-height: 100vh;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background: rgba(0, 0, 0, 0.7);
+            border-bottom: 3px solid #d4af37;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #d4af37;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #d4af37;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #ffd700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(0, 0, 0, 0.8) 100%);
+            padding: 80px 40px;
+            text-align: center;
+            border-bottom: 2px solid #d4af37;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .age-badge {
+            display: inline-block;
+            background: rgba(255, 0, 0, 0.2);
+            border: 2px solid #ff0000;
+            color: #ff0000;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            font-size: 12px;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            color: #d4af37;
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #ccc;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #d4af37 0%, #ffd700 100%);
+            color: #1a1a1a;
+            padding: 16px 40px;
+            border: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(212, 175, 55, 0.5);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #d4af37;
+            padding: 16px 40px;
+            border: 2px solid #d4af37;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(212, 175, 55, 0.1);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 40px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 44px;
+            color: #d4af37;
+            margin-bottom: 10px;
+            text-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .section-title p {
+            color: #aaa;
+            font-size: 16px;
+        }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .game-card {
+            background: rgba(0, 0, 0, 0.6);
+            border: 2px solid #d4af37;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .game-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.3);
+            border-color: #ffd700;
+        }
+
+        .game-card-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.2) 0%, rgba(0, 0, 0, 0.8) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            border-bottom: 2px solid #d4af37;
+        }
+
+        .game-card-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .game-card h3 {
+            color: #ffd700;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .game-card p {
+            color: #ccc;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .game-card-footer {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .game-badge {
+            background: rgba(212, 175, 55, 0.2);
+            color: #d4af37;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .btn-play {
+            background: linear-gradient(135deg, #d4af37 0%, #ffd700 100%);
+            color: #1a1a1a;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            margin-left: auto;
+        }
+
+        .btn-play:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
+        }
+
+        .info-section {
+            background: rgba(212, 175, 55, 0.1);
+            padding: 40px;
+            border-radius: 12px;
+            border-left: 4px solid #d4af37;
+            margin-bottom: 40px;
+        }
+
+        .info-section h3 {
+            color: #ffd700;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .info-section p {
+            color: #ccc;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.9);
+            border-top: 3px solid #d4af37;
+            padding: 40px;
+            text-align: center;
+            color: #aaa;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            margin: 20px 0;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #d4af37;
+            text-decoration: none;
+            font-size: 12px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #ffd700;
+        }
+
+        .footer-bottom {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            font-size: 12px;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px 20px;
+            }
+
+            nav {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                padding: 40px 20px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 14px;
+            }
+
+            .container {
+                padding: 30px 20px;
+            }
+
+            .section-title h2 {
+                font-size: 28px;
+            }
+
+            .games-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">GORA BROTHERS</div>
-            <ul class="nav-links">
-                <li><a href="#home">HOME</a></li>
-                <li><a href="#games">GAMES</a></li>
-                <li><a href="#about">ABOUT</a></li>
-                <li><a href="#contact">CONTACT</a></li>
-            </ul>
-            <button class="btn-primary">PLAY NOW</button>
-        </div>
-    </nav>
+    <header>
+        <a href="/" class="logo">🎰 GORA BROTHERS</a>
+        <nav>
+            <a href="/">HOME</a>
+            <a href="#games">GAMES</a>
+            <a href="/about.html">ABOUT</a>
+            <a href="/contact.html">CONTACT</a>
+        </nav>
+    </header>
 
-    <!-- Hero Section -->
-    <section class="hero-section" id="home">
+    <div class="hero">
         <div class="hero-content">
-            <div class="age-badge">18+ ONLY</div>
+            <div class="age-badge">⚠️ 18+ ONLY</div>
             <h1>Play For Fun With GORA BROTHERS</h1>
-            <p>Experience premium social gaming with our collection of exciting games. 100% Free, No Real Money, No Registration Required.</p>
-            <div class="hero-buttons">
-                <button class="btn-primary">PLAY NOW</button>
-                <button class="btn-secondary">LEARN MORE</button>
+            <p>Experience premium casino gaming with our collection of exciting games. 100% Free, No Real Money, No Registration Required.</p>
+            <div class="cta-buttons">
+                <button class="btn-primary" onclick="document.getElementById('games').scrollIntoView({behavior: 'smooth'})">PLAY NOW</button>
+                <button class="btn-secondary" onclick="window.location.href='/about.html'">LEARN MORE</button>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Featured Games Section -->
-    <section class="featured-games" id="games">
-        <div class="container">
-            <div class="section-title">
-                <h2>Featured Games</h2>
-            </div>
-            
-            <div class="games-grid">
-                <!-- CHASE Game -->
-                <div class="game-card">
-                    <div class="game-image">
-                        <img src="assets/chase-game.webp" alt="CHASE Racing Game">
-                    </div>
-                    <div class="game-info">
-                        <h3>CHASE</h3>
-                        <p>Experience futuristic racing with our premium 3D racing game. Navigate through challenging tracks and compete for glory.</p>
-                        <a href="games/chase/index.html" class="btn-primary">PLAY NOW</a>
-                    </div>
-                </div>
-
-                <!-- Slot Machine Game -->
-                <div class="game-card">
-                    <div class="game-image">
-                        <img src="assets/slots-game.webp" alt="Slot Machine">
-                    </div>
-                    <div class="game-info">
-                        <h3>SLOT MACHINE</h3>
-                        <p>Classic slot machine experience with exciting reels and premium gameplay. Spin and enjoy the thrill of the game.</p>
-                        <a href="games/slots/index.html" class="btn-primary">PLAY NOW</a>
-                    </div>
-                </div>
-
-                <!-- Blackjack Game -->
-                <div class="game-card">
-                    <div class="game-image">
-                        <img src="assets/blackjack-game.webp" alt="Blackjack">
-                    </div>
-                    <div class="game-info">
-                        <h3>BLACKJACK</h3>
-                        <p>Play the classic card game against our dealer. Strategy and luck combine for an engaging gaming experience.</p>
-                        <a href="games/blackjack/index.html" class="btn-primary">PLAY NOW</a>
-                    </div>
-                </div>
-
-                <!-- Lucky Spin Game -->
-                <div class="game-card">
-                    <div class="game-image">
-                        <img src="assets/lucky-spin-game.webp" alt="Lucky Spin">
-                    </div>
-                    <div class="game-info">
-                        <h3>LUCKY SPIN</h3>
-                        <p>Spin the wheel of fortune and test your luck. Simple, exciting, and rewarding gameplay awaits.</p>
-                        <a href="games/lucky-spin/index.html" class="btn-primary">PLAY NOW</a>
-                    </div>
-                </div>
-            </div>
+    <div class="container">
+        <div class="section-title" id="games">
+            <h2>🎮 Featured Games</h2>
+            <p>Choose your favorite game and start playing now!</p>
         </div>
-    </section>
 
-    <!-- About Section -->
-    <section class="about-section" id="about">
-        <div class="container">
-            <div class="section-title">
-                <h2>About GORA BROTHERS</h2>
+        <div class="games-grid">
+            <!-- CHASE Racing Game -->
+            <div class="game-card">
+                <div class="game-card-image">🏎️</div>
+                <div class="game-card-content">
+                    <h3>CHASE</h3>
+                    <p>Experience futuristic 3D racing with challenging tracks. Navigate obstacles, collect bonuses, and compete for the highest score!</p>
+                    <div class="game-card-footer">
+                        <span class="game-badge">Racing</span>
+                        <a href="/games/chase/wrapper.html" class="btn-play">PLAY NOW</a>
+                    </div>
+                </div>
             </div>
-            
-            <div class="about-content">
-                <p>GORA BROTHERS is a premium social gaming platform dedicated to providing world-class entertainment. Our games are designed for fun, excitement, and enjoyment without any real money involvement.</p>
-                
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">🎮</div>
-                        <h3>Premium Games</h3>
-                        <p>Experience high-quality games designed for entertainment and enjoyment.</p>
+
+            <!-- Slot Machine -->
+            <div class="game-card">
+                <div class="game-card-image">🎰</div>
+                <div class="game-card-content">
+                    <h3>SLOT MACHINE</h3>
+                    <p>Classic 3-reel slots with exciting symbols and winning combinations. Spin the reels and watch your winnings grow!</p>
+                    <div class="game-card-footer">
+                        <span class="game-badge">Slots</span>
+                        <a href="/games/slots/wrapper.html" class="btn-play">PLAY NOW</a>
                     </div>
-                    
-                    <div class="feature-card">
-                        <div class="feature-icon">🔒</div>
-                        <h3>100% Safe</h3>
-                        <p>No real money, no registration required. Play freely and safely.</p>
+                </div>
+            </div>
+
+            <!-- Blackjack -->
+            <div class="game-card">
+                <div class="game-card-image">🃏</div>
+                <div class="game-card-content">
+                    <h3>BLACKJACK</h3>
+                    <p>Play the classic card game against our dealer. Use strategy and luck to beat the dealer and win big!</p>
+                    <div class="game-card-footer">
+                        <span class="game-badge">Cards</span>
+                        <a href="/games/blackjack/wrapper.html" class="btn-play">PLAY NOW</a>
                     </div>
-                    
-                    <div class="feature-card">
-                        <div class="feature-icon">⚡</div>
-                        <h3>Instant Access</h3>
-                        <p>Start playing immediately without any setup or registration.</p>
+                </div>
+            </div>
+
+            <!-- Roulette -->
+            <div class="game-card">
+                <div class="game-card-image">🎡</div>
+                <div class="game-card-content">
+                    <h3>ROULETTE</h3>
+                    <p>Authentic casino roulette with 37 numbers. Bet on colors, numbers, or combinations and watch the wheel spin!</p>
+                    <div class="game-card-footer">
+                        <span class="game-badge">Roulette</span>
+                        <a href="/games/lucky-spin/wrapper.html" class="btn-play">PLAY NOW</a>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- How It Works Section -->
-    <section class="how-it-works">
-        <div class="container">
-            <div class="section-title">
-                <h2>How It Works</h2>
-            </div>
-            
-            <div class="steps-grid">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Visit Our Platform</h3>
-                    <p>Access GORA BROTHERS anytime, anywhere. No login or registration needed.</p>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Choose Your Game</h3>
-                    <p>Select from our collection of premium games and start playing instantly.</p>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Play & Enjoy</h3>
-                    <p>Experience the thrill of gaming with our exciting and entertaining games.</p>
-                </div>
-            </div>
+        <div class="info-section">
+            <h3>💡 Why Choose GORA BROTHERS?</h3>
+            <p>✅ <strong>100% Free-to-Play</strong> - No real money involved, pure entertainment</p>
+            <p>✅ <strong>Professional Games</strong> - Authentic casino experience with realistic mechanics</p>
+            <p>✅ <strong>Fair & Secure</strong> - All games use certified Random Number Generators (RNG)</p>
+            <p>✅ <strong>24/7 Available</strong> - Play anytime, anywhere on any device</p>
+            <p>✅ <strong>No Registration</strong> - Start playing immediately without creating an account</p>
         </div>
-    </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <h2>Ready to Play?</h2>
-            <p>Join thousands of players enjoying premium social gaming experience</p>
-            <button class="btn-secondary">START PLAYING NOW</button>
+        <div style="text-align: center; margin-bottom: 40px;">
+            <h2 style="color: #d4af37; margin-bottom: 20px;">Ready to Start Playing?</h2>
+            <button class="btn-primary" onclick="document.getElementById('games').scrollIntoView({behavior: 'smooth'})">EXPLORE GAMES</button>
         </div>
-    </section>
+    </div>
 
-    <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <!-- Quick Links -->
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#games">Games</a></li>
-                        <li><a href="about.php">About Us</a></li>
-                        <li><a href="contact.php">Contact</a></li>
-                    </ul>
-                </div>
-
-                <!-- Legal -->
-                <div class="footer-section">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="privacy.php">Privacy Policy</a></li>
-                        <li><a href="terms.php">Terms & Conditions</a></li>
-                        <li><a href="disclaimer.php">Disclaimer</a></li>
-                        <li><a href="community.php">Community Rules</a></li>
-                    </ul>
-                </div>
-
-                <!-- Policies -->
-                <div class="footer-section">
-                    <h4>Policies</h4>
-                    <ul>
-                        <li><a href="responsible-gaming.php">Responsible Gaming</a></li>
-                        <li><a href="fair-gaming.php">Fair Gaming</a></li>
-                    </ul>
-                </div>
-
-                <!-- Company Info -->
-                <div class="footer-section">
-                    <h4>Company</h4>
-                    <div class="company-details">
-                        <p><strong>GORA BROTHERS PRIVATE LIMITED</strong></p>
-                        <p>CIN: U63030RJ2020PTC068805</p>
-                        <p>GST: 08AAICG3022F1ZY</p>
-                        <p>PAN: AAICG3022F</p>
-                        <p>Email: support@gorabrothers.com</p>
-                    </div>
-                </div>
+        <div class="footer-content">
+            <p>&copy; 2025 GORA BROTHERS PRIVATE LIMITED. All Rights Reserved.</p>
+            <div class="footer-links">
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/terms.html">Terms & Conditions</a>
+                <a href="/disclaimer.html">Disclaimer</a>
+                <a href="/community.html">Community Rules</a>
+                <a href="/responsible.html">Responsible Gaming</a>
+                <a href="/fair-gaming.html">Fair Gaming Policy</a>
             </div>
-
-            <!-- Disclaimer -->
-            <div class="disclaimer-footer">
-                <strong>⚠️ Age Restriction:</strong> This platform is for users 18 years and above only. GORA BROTHERS is a social gaming platform with no real money involvement. Games are for entertainment purposes only.
-            </div>
-
-            <!-- Footer Bottom -->
             <div class="footer-bottom">
-                <p>&copy; 2026 GORA BROTHERS PRIVATE LIMITED. All rights reserved. | Last Updated: January 2026</p>
-                <p>Address: House No. 111 Nayaganv, Mojmabad, Jaipur, Rajasthan, India 302001</p>
+                <p>⚠️ 18+ ONLY | PLAY FOR FUN | NO REAL MONEY</p>
+                <p>This is a free-to-play gaming website for entertainment purposes only.</p>
             </div>
         </div>
     </footer>
-
-    <script src="js/script.js"></script>
 </body>
 </html>

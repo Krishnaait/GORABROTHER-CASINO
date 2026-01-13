@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GORA BROTHERS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: #fff;
+            min-height: 100vh;
+        }
+
+        .game-wrapper {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background: rgba(0, 0, 0, 0.7);
+            border-bottom: 3px solid #d4af37;
+            z-index: 50;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #d4af37;
+        }
+
+        nav a {
+            color: #d4af37;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffd700;
+        }
+
+        .header-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-back {
+            background: #d4af37;
+            color: #1a1a1a;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .btn-back:hover {
+            background: #ffd700;
+            transform: scale(1.05);
+        }
+
+        .btn-fullscreen {
+            background: rgba(212, 175, 55, 0.2);
+            color: #d4af37;
+            padding: 10px 20px;
+            border: 2px solid #d4af37;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 14px;
+        }
+
+        .btn-fullscreen:hover {
+            background: rgba(212, 175, 55, 0.4);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .game-container {
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .fullscreen-mode {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1000;
+        }
+
+        .fullscreen-mode header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.9);
+        }
+
+        .fullscreen-mode .game-container {
+            height: 100%;
+            padding-top: 60px;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .header-buttons {
+                width: 100%;
+                justify-content: space-between;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="game-wrapper" id="gameWrapper">
+        <header>
+            <div class="logo">🎰 GORA BROTHERS</div>
+            <nav>
+                <a href="/">HOME</a>
+                <a href="/#games">GAMES</a>
+                <a href="/about.html">ABOUT</a>
+            </nav>
+            <div class="header-buttons">
+                <button class="btn-back" onclick="window.location.href='/'">← BACK TO HOME</button>
+                <button class="btn-fullscreen" id="fullscreenBtn" onclick="toggleFullscreen()">⛶ FULLSCREEN</button>
+            </div>
+        </header>
+
+        <div class="game-container" id="gameContainer">
+            <iframe src="index.html" allow="fullscreen"></iframe>
+        </div>
+    </div>
+
+    <script>
+        function toggleFullscreen() {
+            const wrapper = document.getElementById('gameWrapper');
+            const btn = document.getElementById('fullscreenBtn');
+            
+            if (wrapper.classList.contains('fullscreen-mode')) {
+                wrapper.classList.remove('fullscreen-mode');
+                btn.textContent = '⛶ FULLSCREEN';
+                document.body.style.overflow = 'auto';
+            } else {
+                wrapper.classList.add('fullscreen-mode');
+                btn.textContent = '⛶ EXIT FULLSCREEN';
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        // Keyboard shortcut for fullscreen (F key)
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'f' || e.key === 'F') {
+                toggleFullscreen();
+            }
+        });
+    </script>
+</body>
+</html>
