@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lucky Spin Game - GORA BROTHERS Casino">
+    <title>Lucky Spin - GORA BROTHERS</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .game-container {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            min-height: 100vh;
+            padding: 2rem 0;
+        }
+
+        .game-header {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(212, 175, 55, 0.05) 100%);
+            border-bottom: 2px solid #d4af37;
+            padding: 2rem 0;
+            margin-bottom: 3rem;
+        }
+
+        .game-header h1 {
+            color: #d4af37;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 0.5rem;
+        }
+
+        .game-header p {
+            color: #b0b0b0;
+            font-size: 1.1rem;
+        }
+
+        .game-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .game-iframe {
+            background: #000;
+            border: 2px solid #d4af37;
+            border-radius: 10px;
+            overflow: hidden;
+            aspect-ratio: 16/9;
+        }
+
+        .game-iframe iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .game-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .info-card {
+            background: rgba(212, 175, 55, 0.05);
+            border-left: 4px solid #d4af37;
+            padding: 1.5rem;
+            border-radius: 5px;
+        }
+
+        .info-card h3 {
+            color: #d4af37;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .info-card p {
+            color: #b0b0b0;
+            line-height: 1.8;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-card ul {
+            color: #b0b0b0;
+            margin-left: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .info-card li {
+            margin-bottom: 0.5rem;
+        }
+
+        .how-to-play {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(212, 175, 55, 0.05) 100%);
+            border: 2px solid #d4af37;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 3rem;
+        }
+
+        .how-to-play h2 {
+            color: #d4af37;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .how-to-play ol {
+            color: #b0b0b0;
+            margin-left: 2rem;
+            line-height: 2;
+        }
+
+        .how-to-play li {
+            margin-bottom: 1rem;
+        }
+
+        .game-history {
+            background: rgba(212, 175, 55, 0.05);
+            border: 2px solid #d4af37;
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        .game-history h2 {
+            color: #d4af37;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .game-history p {
+            color: #b0b0b0;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-bottom: 2rem;
+            padding: 0.8rem 1.5rem;
+            background: #d4af37;
+            color: #1a1a1a;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            background: #e5c158;
+            transform: translateX(-5px);
+        }
+
+        @media (max-width: 768px) {
+            .game-content {
+                grid-template-columns: 1fr;
+            }
+
+            .game-header h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">GORA BROTHERS</div>
+            <ul class="nav-links">
+                <li><a href="../index.html">HOME</a></li>
+                <li><a href="../index.html#games">GAMES</a></li>
+                <li><a href="../about.php">ABOUT</a></li>
+                <li><a href="../contact.php">CONTACT</a></li>
+            </ul>
+            <button class="btn-primary" onclick="location.href='../index.html'">BACK</button>
+        </div>
+    </nav>
+
+    <!-- Game Header -->
+    <div class="game-header">
+        <div class="container">
+            <h1>🎡 LUCKY SPIN - Wheel of Fortune</h1>
+            <p>Spin the wheel of fortune and test your luck! Watch the wheel spin and win amazing rewards!</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container game-container">
+        <a href="../index.html" class="back-button">← Back to Games</a>
+
+        <!-- Game Content -->
+        <div class="game-content">
+            <!-- Game Iframe -->
+            <div class="game-iframe">
+                <div style="display: flex; align-items: center; justify-content: center; height: 100%; background: #1a1a1a; color: #d4af37; font-size: 1.2rem;">
+                    <p>Lucky Spin Game Loading...</p>
+                </div>
+            </div>
+
+            <!-- Game Info -->
+            <div class="game-info">
+                <div class="info-card">
+                    <h3>Game Details</h3>
+                    <p><strong>Type:</strong> Wheel Spin Game</p>
+                    <p><strong>Segments:</strong> 8 Prize Segments</p>
+                    <p><strong>Starting Credits:</strong> 1000</p>
+                    <p><strong>Spin Cost:</strong> 50 Credits</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Game Features</h3>
+                    <ul>
+                        <li>✓ Spinning wheel animation</li>
+                        <li>✓ Multiple prize segments</li>
+                        <li>✓ Random outcome generation</li>
+                        <li>✓ Real-time credit tracking</li>
+                        <li>✓ Instant prize notification</li>
+                        <li>✓ Reset button for new games</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3>Prize Segments</h3>
+                    <ul>
+                        <li>🎁 Mystery Prize = 100 Credits</li>
+                        <li>🏆 Gold Prize = 200 Credits</li>
+                        <li>💎 Diamond Prize = 300 Credits</li>
+                        <li>🌟 Star Prize = 150 Credits</li>
+                        <li>🎯 Bonus Prize = 250 Credits</li>
+                        <li>🎪 Jackpot = 500 Credits</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- How to Play -->
+        <div class="how-to-play">
+            <h2>How to Play Lucky Spin</h2>
+            <ol>
+                <li><strong>Start with Credits:</strong> Begin with 1000 virtual credits</li>
+                <li><strong>Place Your Bet:</strong> Each spin costs 50 credits</li>
+                <li><strong>Click Spin:</strong> Click the SPIN button to start the wheel</li>
+                <li><strong>Watch the Wheel:</strong> The wheel will spin and gradually slow down</li>
+                <li><strong>Check Your Prize:</strong> The wheel stops at a random segment</li>
+                <li><strong>Collect Rewards:</strong> Your prize is instantly added to your credits</li>
+                <li><strong>Continue Spinning:</strong> Keep spinning as long as you have credits</li>
+                <li><strong>Aim for Jackpot:</strong> Try to land on the Jackpot segment for 500 credits!</li>
+                <li><strong>Reset if Needed:</strong> Click RESET to restore your balance to 1000 credits</li>
+            </ol>
+        </div>
+
+        <!-- Game History -->
+        <div class="game-history">
+            <h2>About Lucky Spin</h2>
+            <p>Lucky Spin is a classic wheel-based game that combines the excitement of spinning with the thrill of random rewards. Our version brings the traditional wheel of fortune experience to the digital world with smooth animations and fair gameplay.</p>
+            
+            <p><strong>Game Evolution:</strong> Wheel-based games have been popular in casinos and fairs for centuries. Our Lucky Spin game captures the essence of the classic wheel of fortune while providing a modern, engaging digital experience. The wheel uses random number generation to ensure fair and unpredictable outcomes on every spin.</p>
+            
+            <p><strong>Why Players Love Lucky Spin:</strong></p>
+            <ul style="margin-left: 1.5rem; color: #b0b0b0; line-height: 1.8;">
+                <li>• Exciting spinning animation</li>
+                <li>• Instant results and rewards</li>
+                <li>• Multiple prize opportunities</li>
+                <li>• Potential for big wins</li>
+                <li>• Simple and intuitive gameplay</li>
+                <li>• Suspenseful waiting for the wheel to stop</li>
+            </ul>
+
+            <p style="margin-top: 1rem;"><strong>Strategy Tips:</strong> While Lucky Spin is primarily a game of chance, you can maximize your enjoyment by managing your credits wisely. Set a budget for your gaming session, take breaks between spins, and remember that every spin has an equal chance of landing on any segment. The key is to have fun and enjoy the experience!</p>
+
+            <p style="margin-top: 1rem;"><strong>Important Note:</strong> This is a FREE social gaming experience with NO REAL MONEY involved. All credits are virtual and for entertainment purposes only. Play responsibly and enjoy the game!</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../index.html#games">Games</a></li>
+                        <li><a href="../about.php">About Us</a></li>
+                        <li><a href="../contact.php">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../privacy.php">Privacy Policy</a></li>
+                        <li><a href="../terms.php">Terms & Conditions</a></li>
+                        <li><a href="../disclaimer.php">Disclaimer</a></li>
+                        <li><a href="../community.php">Community Rules</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Policies</h4>
+                    <ul>
+                        <li><a href="../responsible-gaming.php">Responsible Gaming</a></li>
+                        <li><a href="../fair-gaming.php">Fair Gaming</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <div class="company-details">
+                        <p><strong>GORA BROTHERS PRIVATE LIMITED</strong></p>
+                        <p>CIN: U63030RJ2020PTC068805</p>
+                        <p>GST: 08AAICG3022F1ZY</p>
+                        <p>Email: support@gorabrothers.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 GORA BROTHERS PRIVATE LIMITED. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
