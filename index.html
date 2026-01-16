@@ -38,6 +38,12 @@
             gap: 10px;
         }
 
+        .logo img {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+        }
+
         nav {
             display: flex;
             gap: 30px;
@@ -58,13 +64,33 @@
 
         .hero {
             position: relative;
-            height: 600px;
+            height: 700px;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
             border-bottom: 3px solid #d4af37;
             background: #000;
+        }
+
+        .hero-logo-section {
+            position: absolute;
+            top: 80px;
+            z-index: 5;
+            text-align: center;
+        }
+
+        .hero-logo-section img {
+            height: 200px;
+            width: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.5));
+            animation: logoFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes logoFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
         }
 
         .hero-background {
@@ -82,11 +108,11 @@
         }
 
         @keyframes heroSlideshow {
-            0% { background-image: url('/images/hero-banner.webp'); transform: scale(1); }
-            25% { background-image: url('/images/hero-banner.webp'); transform: scale(1.05); }
-            50% { background-image: url('/images/slots-game.webp'); transform: scale(1); }
-            75% { background-image: url('/images/blackjack-game.webp'); transform: scale(1.05); }
-            100% { background-image: url('/images/hero-banner.webp'); transform: scale(1); }
+            0% { background-image: url('/images/casino_homepage_hero.webp'); transform: scale(1); }
+            25% { background-image: url('/images/casino_homepage_hero.webp'); transform: scale(1.05); }
+            50% { background-image: url('/images/realistic_casino_floor.webp'); transform: scale(1); }
+            75% { background-image: url('/images/hero_banner_vip.webp'); transform: scale(1.05); }
+            100% { background-image: url('/images/casino_homepage_hero.webp'); transform: scale(1); }
         }
 
         .hero-overlay {
@@ -106,6 +132,7 @@
             z-index: 3;
             padding: 0 40px;
             text-align: center;
+            margin-top: 120px;
         }
 
         .age-badge {
@@ -380,7 +407,7 @@
 </head>
 <body>
     <header>
-        <a href="/" class="logo">🎰 GORA BROTHERS</a>
+        <a href="/" class="logo"><img src="/images/logo.webp" alt="GORA BROTHERS Logo"> GORA BROTHERS</a>
         <nav>
             <a href="/">HOME</a>
             <a href="#games">GAMES</a>
@@ -392,6 +419,9 @@
     <div class="hero">
         <div class="hero-background"></div>
         <div class="hero-overlay"></div>
+        <div class="hero-logo-section">
+            <img src="/images/logo.webp" alt="GORA BROTHERS Phoenix Logo">
+        </div>
         <div class="hero-content">
             <div class="age-badge">18+ ONLY | PLAY FOR FUN</div>
             <h1>GORA BROTHERS</h1>
