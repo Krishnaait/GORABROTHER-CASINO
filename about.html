@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GORA BROTHERS</title>
+    <title>About - GORA BROTHERS</title>
     <style>
         * {
             margin: 0;
@@ -16,42 +16,15 @@
             background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
             color: #fff;
             min-height: 100vh;
-        }
-
-        header {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 20px;
-            background: rgba(0, 0, 0, 0.5);
-            border-bottom: 3px solid #d4af37;
-            max-width: 1200px;
-            margin: 0 auto;
-            width: 100%;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #d4af37;
-        }
-
-        nav a {
-            color: #d4af37;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: #ffd700;
+            flex-direction: column;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 40px 20px;
+            flex: 1;
         }
 
         .page-title {
@@ -158,59 +131,15 @@
             color: #ccc;
         }
 
+        main {
+            flex: 1;
+        }
+
         footer {
-            background: rgba(0, 0, 0, 0.8);
-            border-top: 3px solid #d4af37;
-            padding: 40px 20px;
-            text-align: center;
-            color: #aaa;
-            margin-top: 50px;
-        }
-
-        footer a {
-            color: #d4af37;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-
-        footer a:hover {
-            color: #ffd700;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .footer-links {
-            margin: 20px 0;
-        }
-
-        .footer-bottom {
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(212, 175, 55, 0.2);
-            font-size: 12px;
+            margin-top: auto;
         }
 
         @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            nav {
-                display: flex;
-                gap: 10px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            nav a {
-                margin: 0 5px;
-                font-size: 12px;
-            }
-
             .page-title h1 {
                 font-size: 32px;
             }
@@ -227,173 +156,151 @@
     </style>
 </head>
 <body>
-    <header>
-        <div class="logo">🎰 GORA BROTHERS</div>
-        <nav>
-            <a href="/">HOME</a>
-            <a href="/#games">GAMES</a>
-            <a href="/about.html">ABOUT</a>
-            <a href="/contact.html">CONTACT</a>
-        </nav>
-    </header>
+    <!-- Header and Footer will be loaded via JavaScript -->
+    
+    <main>
+        <div class="container">
+            <div class="page-title">
+                <h1>ABOUT GORA BROTHERS</h1>
+                <p>Premium Casino Gaming Experience</p>
+            </div>
 
-    <div class="container">
-        <div class="page-title">
-            <h1>ABOUT GORA BROTHERS</h1>
-            <p>Premium Casino Gaming Experience</p>
-        </div>
+            <div class="content-section">
+                <h2>🎰 WHO WE ARE</h2>
+                <p>
+                    GORA BROTHERS is a premium online casino gaming platform dedicated to providing world-class entertainment 
+                    and gaming experiences. We are committed to delivering authentic casino games with professional design, 
+                    fair gameplay, and an immersive user experience.
+                </p>
+                <p>
+                    Our mission is to create a safe, enjoyable, and entertaining gaming environment where players can experience 
+                    the thrill of casino games in a responsible and fun manner.
+                </p>
+            </div>
 
-        <div class="content-section">
-            <h2>🎰 WHO WE ARE</h2>
-            <p>
-                GORA BROTHERS is a premium online casino gaming platform dedicated to providing world-class entertainment 
-                and gaming experiences. We are committed to delivering authentic casino games with professional design, 
-                fair gameplay, and an immersive user experience.
-            </p>
-            <p>
-                Our mission is to create a safe, enjoyable, and entertaining gaming environment where players can experience 
-                the thrill of casino games in a responsible and fun manner.
-            </p>
-        </div>
-
-        <div class="content-section">
-            <h2>🎮 OUR GAMES</h2>
-            <p>We offer a diverse collection of professional casino games:</p>
-            
-            <div class="features-grid">
-                <div class="feature-card">
-                    <h4>🏎️ CHASE</h4>
-                    <p>Futuristic 3D racing game with challenging tracks and real-time scoring</p>
-                </div>
-                <div class="feature-card">
-                    <h4>🎰 SLOT MACHINE</h4>
-                    <p>Classic 3-reel slots with multiple winning combinations and fair RNG</p>
-                </div>
-                <div class="feature-card">
-                    <h4>🃏 BLACKJACK</h4>
-                    <p>Professional card game with realistic dealer AI and strategic gameplay</p>
-                </div>
-                <div class="feature-card">
-                    <h4>🎡 ROULETTE</h4>
-                    <p>Authentic casino roulette with 37 numbers and multiple betting options</p>
+            <div class="content-section">
+                <h2>🎮 OUR GAMES</h2>
+                <p>We offer a diverse collection of professional casino games:</p>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h4>🏎️ CHASE</h4>
+                        <p>Futuristic 3D racing game with challenging tracks and real-time scoring</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>🎰 SLOT MACHINE</h4>
+                        <p>Classic 3-reel slots with multiple winning combinations and fair RNG</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>🃏 BLACKJACK</h4>
+                        <p>Professional card game with realistic dealer AI and strategic gameplay</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>🎡 ROULETTE</h4>
+                        <p>Authentic casino roulette with 37 numbers and multiple betting options</p>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="content-section">
-            <h2>✨ WHY CHOOSE GORA BROTHERS?</h2>
-            
-            <h3>🎯 Professional Gaming Experience</h3>
-            <p>
-                All our games are designed with professional casino aesthetics and authentic mechanics. 
-                We provide a premium gaming experience that rivals real casino environments.
-            </p>
+            <div class="content-section">
+                <h2>✨ WHY CHOOSE GORA BROTHERS?</h2>
+                
+                <h3>🎯 Professional Gaming Experience</h3>
+                <p>
+                    All our games are designed with professional casino aesthetics and authentic mechanics. 
+                    We provide a premium gaming experience that rivals real casino environments.
+                </p>
 
-            <h3>🔒 Fair & Secure</h3>
-            <p>
-                Every game uses certified Random Number Generators (RNG) to ensure fair gameplay. 
-                Your gaming experience is completely transparent and trustworthy.
-            </p>
+                <h3>🔒 Fair & Secure</h3>
+                <p>
+                    Every game uses certified Random Number Generators (RNG) to ensure fair gameplay. 
+                    Your gaming experience is completely transparent and trustworthy.
+                </p>
 
-            <h3>🎮 Diverse Game Selection</h3>
-            <p>
-                From racing games to card games, slots to roulette - we offer something for every gaming preference. 
-                Each game is carefully crafted for maximum entertainment.
-            </p>
+                <h3>🎮 Diverse Game Selection</h3>
+                <p>
+                    From racing games to card games, slots to roulette - we offer something for every gaming preference. 
+                    Each game is carefully crafted for maximum entertainment.
+                </p>
 
-            <h3>💰 Free-to-Play</h3>
-            <p>
-                All games are completely free-to-play with no real money involved. 
-                Enjoy unlimited entertainment without any financial risk.
-            </p>
+                <h3>💰 Free-to-Play</h3>
+                <p>
+                    All games are completely free-to-play with no real money involved. 
+                    Enjoy unlimited entertainment without any financial risk.
+                </p>
 
-            <h3>📱 Responsive Design</h3>
-            <p>
-                Play on any device - desktop, tablet, or mobile. Our games are optimized for all screen sizes 
-                to provide a seamless gaming experience anywhere, anytime.
-            </p>
+                <h3>📱 Responsive Design</h3>
+                <p>
+                    Play on any device - desktop, tablet, or mobile. Our games are optimized for all screen sizes 
+                    to provide a seamless gaming experience anywhere, anytime.
+                </p>
 
-            <h3>🌍 24/7 Availability</h3>
-            <p>
-                Access GORA BROTHERS anytime, anywhere. Our platform is always available for your entertainment.
-            </p>
-        </div>
+                <h3>🌍 24/7 Availability</h3>
+                <p>
+                    Access GORA BROTHERS anytime, anywhere. Our platform is always available for your entertainment.
+                </p>
+            </div>
 
-        <div class="content-section">
-            <h2>🏢 COMPANY INFORMATION</h2>
-            
-            <div class="company-info">
-                <h3>Legal Details</h3>
-                <div class="info-item">
-                    <span class="info-label">Company Name:</span>
-                    <span class="info-value">GORA BROTHERS PRIVATE LIMITED</span>
-                </div>
-                <div class="info-item">
-                    <span class="info-label">CIN:</span>
-                    <span class="info-value">U63030RJ2020PTC068805</span>
-                </div>
-                <div class="info-item">
-                    <span class="info-label">GST:</span>
-                    <span class="info-value">08AAICG3022F1ZY</span>
-                </div>
-                <div class="info-item">
-                    <span class="info-label">PAN:</span>
-                    <span class="info-value">AAICG3022F</span>
-                </div>
-                <div class="info-item">
-                    <span class="info-label">Location:</span>
-                    <span class="info-value">Jaipur, Rajasthan, India</span>
+            <div class="content-section">
+                <h2>🏢 COMPANY INFORMATION</h2>
+                
+                <div class="company-info">
+                    <h3>Legal Details</h3>
+                    <div class="info-item">
+                        <span class="info-label">Company Name:</span>
+                        <span class="info-value">GORA BROTHERS PRIVATE LIMITED</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">CIN:</span>
+                        <span class="info-value">U63030RJ2020PTC068805</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">GST:</span>
+                        <span class="info-value">08AAICG3022F1ZY</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">PAN:</span>
+                        <span class="info-value">AAICG3022F</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Location:</span>
+                        <span class="info-value">Jaipur, Rajasthan, India</span>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="content-section">
-            <h2>⚠️ RESPONSIBLE GAMING</h2>
-            <p>
-                GORA BROTHERS is committed to responsible gaming practices. Our platform is designed for entertainment purposes only.
-            </p>
-            <p>
-                <strong>Age Restriction:</strong> This platform is strictly for players 18 years and older.
-            </p>
-            <p>
-                <strong>No Real Money:</strong> All games are played with virtual credits. No real money is involved.
-            </p>
-            <p>
-                <strong>Play Responsibly:</strong> Gaming should be fun and entertaining. If you feel gaming is becoming a problem, 
-                please seek help from appropriate resources.
-            </p>
-        </div>
-
-        <div class="content-section">
-            <h2>📞 CONTACT US</h2>
-            <p>
-                Have questions or feedback? We'd love to hear from you!
-            </p>
-            <p>
-                <strong>Email:</strong> <a href="mailto:contact@gorabrothers.com" style="color: #d4af37;">contact@gorabrothers.com</a>
-            </p>
-            <p>
-                <strong>Visit our Contact page:</strong> <a href="/contact.html" style="color: #d4af37;">Click here</a>
-            </p>
-        </div>
-    </div>
-
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2025 GORA BROTHERS PRIVATE LIMITED. All Rights Reserved.</p>
-            <div class="footer-links">
-                <a href="/privacy.html">Privacy Policy</a> |
-                <a href="/terms.html">Terms & Conditions</a> |
-                <a href="/disclaimer.html">Disclaimer</a> |
-                <a href="/community.html">Community Rules</a> |
-                <a href="/responsible.html">Responsible Gaming</a> |
-                <a href="/fair-gaming.html">Fair Gaming Policy</a>
+            <div class="content-section">
+                <h2>⚠️ RESPONSIBLE GAMING</h2>
+                <p>
+                    GORA BROTHERS is committed to responsible gaming practices. Our platform is designed for entertainment purposes only.
+                </p>
+                <p>
+                    <strong>Age Restriction:</strong> This platform is strictly for players 18 years and older.
+                </p>
+                <p>
+                    <strong>No Real Money:</strong> All games are played with virtual credits. No real money is involved.
+                </p>
+                <p>
+                    <strong>Play Responsibly:</strong> Gaming should be fun and entertaining. If you feel gaming is becoming a problem, 
+                    please seek help from appropriate resources.
+                </p>
             </div>
-            <div class="footer-bottom">
-                <p>⚠️ 18+ ONLY | PLAY FOR FUN | NO REAL MONEY</p>
-                <p>This is a free-to-play gaming website for entertainment purposes only.</p>
+
+            <div class="content-section">
+                <h2>📞 CONTACT US</h2>
+                <p>
+                    Have questions or feedback? We'd love to hear from you!
+                </p>
+                <p>
+                    <strong>Email:</strong> <a href="mailto:contact@gorabrothers.com" style="color: #d4af37;">contact@gorabrothers.com</a>
+                </p>
+                <p>
+                    <strong>Visit our Contact page:</strong> <a href="/contact.html" style="color: #d4af37;">Click here</a>
+                </p>
             </div>
         </div>
-    </footer>
+    </main>
+
+    <script src="/js/load-header-footer.js"></script>
 </body>
 </html>
