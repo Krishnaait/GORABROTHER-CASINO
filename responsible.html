@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsible Gaming - GORA BROTHERS</title>
-    <link rel="stylesheet" href="css/style.css">
     <style>
         * {
             margin: 0;
@@ -14,285 +13,216 @@
 
         body {
             background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            font-family: 'Arial', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: #fff;
             line-height: 1.8;
-        }
-
-        header {
+            min-height: 100vh;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 30px;
-            background: rgba(0, 0, 0, 0.9);
-            border-bottom: 3px solid #d4af37;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            flex-direction: column;
         }
 
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #d4af37;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        main {
+            flex: 1;
         }
 
-        nav {
-            display: flex;
-            gap: 25px;
-        }
-
-        nav a {
-            color: #d4af37;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s;
-            font-size: 14px;
-        }
-
-        nav a:hover {
-            color: #ffd700;
-        }
-
-        .btn-back {
-            background: #d4af37;
-            color: #1a1a1a;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 50px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-size: 13px;
-        }
-
-        .btn-back:hover {
-            background: #ffd700;
-            transform: scale(1.05);
+        footer {
+            margin-top: auto;
         }
 
         .container {
             max-width: 1000px;
-            margin: 40px auto;
-            padding: 40px;
-            background: rgba(0, 0, 0, 0.5);
+            margin: 60px auto;
+            padding: 50px;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(212, 175, 55, 0.05) 100%);
             border: 2px solid #d4af37;
-            border-radius: 10px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(212, 175, 55, 0.15);
         }
 
         h1 {
-            color: #d4af37;
+            color: #ffd700;
             margin-bottom: 30px;
-            font-size: 2.5em;
-            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+            font-size: 2.8em;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+            letter-spacing: 1px;
+            font-weight: 700;
         }
 
         h2 {
             color: #d4af37;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            font-size: 1.5em;
-            border-bottom: 2px solid #d4af37;
-            padding-bottom: 10px;
+            margin-top: 35px;
+            margin-bottom: 20px;
+            font-size: 1.6em;
+            border-bottom: 3px solid #d4af37;
+            padding-bottom: 12px;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        h2:hover {
+            color: #ffd700;
+            border-bottom-color: #ffd700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
         }
 
         p {
-            margin-bottom: 15px;
-            color: #ccc;
-            font-size: 14px;
+            margin-bottom: 18px;
+            color: #e0e0e0;
+            font-size: 15px;
+            line-height: 1.9;
+            letter-spacing: 0.3px;
         }
 
         ul {
-            margin-left: 20px;
-            margin-bottom: 15px;
+            margin-left: 25px;
+            margin-bottom: 20px;
         }
 
         li {
-            margin-bottom: 10px;
-            color: #ccc;
-            font-size: 14px;
+            margin-bottom: 12px;
+            color: #e0e0e0;
+            font-size: 15px;
+            line-height: 1.8;
+            transition: all 0.3s ease;
         }
 
-        .info-box {
-            background: rgba(212, 175, 55, 0.1);
-            border: 2px solid #d4af37;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 5px;
+        li:before {
+            content: "▸ ";
+            color: #d4af37;
+            font-weight: bold;
+            margin-right: 8px;
         }
 
-        .info-box p {
+        strong {
+            color: #ffd700;
+            font-weight: 600;
+        }
+
+        a {
+            color: #d4af37;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid transparent;
+        }
+
+        a:hover {
+            color: #ffd700;
+            border-bottom-color: #ffd700;
+            text-shadow: 0 0 8px rgba(255, 215, 0, 0.3);
+        }
+
+        .section-number {
             color: #d4af37;
             font-weight: bold;
         }
 
-        footer {
-            background: #000;
-            color: #fff;
-            border-top: 3px solid #d4af37;
-            padding: 40px 20px;
-            margin-top: 40px;
-        }
-
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-column h3 {
-            color: #d4af37;
-            font-size: 16px;
-            margin-bottom: 15px;
-            border-bottom: 2px solid #d4af37;
-            padding-bottom: 10px;
-        }
-
-        .footer-column p {
-            font-size: 13px;
-            line-height: 1.8;
-            color: #ccc;
-            margin-bottom: 8px;
-        }
-
-        .footer-column ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .footer-column ul li {
-            margin-bottom: 8px;
-        }
-
-        .footer-column ul li a {
-            color: #d4af37;
-            text-decoration: none;
-            font-size: 13px;
-            transition: color 0.3s;
-        }
-
-        .footer-column ul li a:hover {
-            color: #ffd700;
-            text-decoration: underline;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid #333;
-            padding-top: 20px;
-            text-align: center;
-            font-size: 12px;
-            color: #999;
-        }
-
-        .footer-links {
-            margin-bottom: 15px;
-            font-size: 12px;
-        }
-
-        .footer-links a {
-            color: #d4af37;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: #ffd700;
+        .warning-box {
+            background: rgba(255, 0, 0, 0.1);
+            border: 2px solid #ff6b6b;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+            color: #ff6b6b;
         }
 
         @media (max-width: 768px) {
-            header {
-                flex-wrap: wrap;
-                gap: 10px;
-                padding: 10px 15px;
-            }
-
-            nav {
-                display: none;
-            }
-
             .container {
                 margin: 20px;
-                padding: 20px;
+                padding: 30px;
             }
 
             h1 {
-                font-size: 1.8em;
+                font-size: 2em;
+                margin-bottom: 20px;
             }
 
             h2 {
-                font-size: 1.2em;
+                font-size: 1.3em;
+                margin-top: 25px;
             }
 
-            .footer-container {
-                grid-template-columns: 1fr;
-                gap: 20px;
+            p {
+                font-size: 14px;
+            }
+
+            ul {
+                margin-left: 20px;
             }
         }
     </style>
 </head>
 <body>
-
+    <!-- Header and Footer will be loaded via JavaScript -->
+    
     <main>
         <div class="container">
-        <h1>Responsible Gaming</h1>
+            <h1>Responsible Gaming</h1>
 
-        <div class="info-box">
-            <p>💡 GORA BROTHERS is committed to promoting responsible gaming practices. Gaming should be fun and entertaining, not a source of stress or financial problems.</p>
+            <div class="warning-box">
+                ⚠️ IMPORTANT: GORA BROTHERS is a free-to-play platform for entertainment purposes only. No real money is involved. Please play responsibly and within your means.
+            </div>
+
+            <h2><span class="section-number">1.</span> Our Commitment to Responsible Gaming</h2>
+            <p>GORA BROTHERS is committed to promoting responsible gaming practices. We believe that gaming should be an enjoyable form of entertainment. We encourage all users to play responsibly and to seek help if they feel their gaming habits are becoming problematic.</p>
+
+            <h2><span class="section-number">2.</span> Age Restrictions</h2>
+            <p>GORA BROTHERS is strictly for users aged 18 years and above. We do not permit access to our platform for anyone under 18 years of age. By using our platform, you confirm that you are at least 18 years old and comply with all applicable laws and regulations in your jurisdiction.</p>
+
+            <h2><span class="section-number">3.</span> Free-to-Play Model</h2>
+            <p>GORA BROTHERS operates on a 100% free-to-play model. No real money is involved in any games or transactions. All games use virtual currency for entertainment purposes only. There is no possibility of winning real money, prizes, or any monetary value.</p>
+
+            <h2><span class="section-number">4.</span> Setting Limits</h2>
+            <p>We encourage users to set personal limits on their gaming activities:</p>
+            <ul>
+                <li>Set a time limit for each gaming session</li>
+                <li>Take regular breaks during extended play</li>
+                <li>Do not use gaming as a way to escape problems or negative emotions</li>
+                <li>Maintain a healthy balance between gaming and other activities</li>
+                <li>Never neglect work, school, family, or social responsibilities</li>
+            </ul>
+
+            <h2><span class="section-number">5.</span> Signs of Problem Gaming</h2>
+            <p>If you experience any of the following, you may benefit from seeking help:</p>
+            <ul>
+                <li>Spending more time gaming than intended</li>
+                <li>Thinking about gaming constantly</li>
+                <li>Neglecting personal, professional, or educational responsibilities</li>
+                <li>Gaming to escape stress, anxiety, or depression</li>
+                <li>Difficulty reducing or controlling gaming time</li>
+                <li>Experiencing mood swings related to gaming</li>
+                <li>Lying to friends or family about gaming habits</li>
+            </ul>
+
+            <h2><span class="section-number">6.</span> Support Resources</h2>
+            <p>If you or someone you know is struggling with gaming habits, please reach out to professional support services:</p>
+            <ul>
+                <li>National Council on Problem Gambling: 1-800-522-4700 (USA)</li>
+                <li>Gamblers Anonymous: www.gamblersanonymous.org</li>
+                <li>Problem Gambling Services: Available in most countries</li>
+                <li>Mental Health Professionals: Seek counseling from qualified therapists</li>
+                <li>Support Groups: Join community support groups for shared experiences</li>
+            </ul>
+
+            <h2><span class="section-number">7.</span> Self-Exclusion</h2>
+            <p>If you feel you need a break from gaming, you can contact our support team to request temporary or permanent account suspension. We will honor your request and help you take control of your gaming habits.</p>
+
+            <h2><span class="section-number">8.</span> Parental Controls</h2>
+            <p>Parents and guardians are encouraged to use parental control software to restrict access to gaming websites. GORA BROTHERS is not intended for minors, and we recommend that parents monitor their children's online activities.</p>
+
+            <h2><span class="section-number">9.</span> Fair Play and Transparency</h2>
+            <p>GORA BROTHERS uses certified Random Number Generators (RNG) to ensure fair gameplay. All games are designed to provide an authentic gaming experience while maintaining the highest standards of fairness and transparency. We do not manipulate game outcomes or engage in any unfair practices.</p>
+
+            <h2><span class="section-number">10.</span> Contact Us for Support</h2>
+            <p>If you have questions about responsible gaming or need support, please contact us at:</p>
+            <p>
+                <strong>GORA BROTHERS PRIVATE LIMITED</strong><br>
+                Jaipur, Rajasthan 302001, India<br>
+                Email: support@gorabrothers.com
+            </p>
         </div>
     </main>
 
-        <h2>1. Gaming as Entertainment</h2>
-        <p>GORA BROTHERS is designed for entertainment purposes only. Games should be played for fun and relaxation, not as a way to make money or solve financial problems. Remember that the outcome of all games is determined by chance.</p>
-
-        <h2>2. Set Time Limits</h2>
-        <p>We recommend setting time limits for your gaming sessions. Take regular breaks to maintain a healthy balance between gaming and other activities. Do not let gaming interfere with your work, studies, or personal relationships.</p>
-
-        <h2>3. Set Spending Limits</h2>
-        <p>Although GORA BROTHERS is completely free and involves no real money, we encourage users to be mindful of the time they spend on the platform. Excessive gaming can become a habit.</p>
-
-        <h2>4. Never Chase Losses</h2>
-        <p>If you experience a losing streak in games, do not attempt to recover losses by playing more. Accept losses as part of the game and take a break if needed.</p>
-
-        <h2>5. Avoid Gaming Under Influence</h2>
-        <p>Do not use this platform while under the influence of alcohol or drugs. Gaming requires focus and clear judgment.</p>
-
-        <h2>6. Keep Gaming in Perspective</h2>
-        <p>Remember that all games on GORA BROTHERS are based on chance. There is no strategy that guarantees winning. Outcomes are random and unpredictable.</p>
-
-        <h2>7. Warning Signs of Problem Gaming</h2>
-        <p>If you experience any of the following, please seek help:</p>
-        <ul>
-            <li>Spending more time gaming than intended</li>
-            <li>Neglecting work, school, or personal relationships due to gaming</li>
-            <li>Feeling anxious or irritable when not gaming</li>
-            <li>Using gaming as an escape from problems</li>
-            <li>Lying to others about the amount of time spent gaming</li>
-            <li>Experiencing financial difficulties due to gaming</li>
-        </ul>
-
-        <h2>8. Seek Help if Needed</h2>
-        <p>If you believe you have a problem with gaming, please reach out to appropriate resources:</p>
-        <ul>
-            <li>Talk to a family member or trusted friend</li>
-            <li>Consult a mental health professional</li>
-            <li>Contact local support organizations for gaming addiction</li>
-            <li>Reach out to GORA BROTHERS support team</li>
-        </ul>
-
-        <h2>9. Parental Controls</h2>
-        <p>Parents and guardians should monitor their children's internet usage and ensure they do not access GORA BROTHERS. This website is strictly for users 18 years and older.</p>
-
-        <h2>10. Contact & Support</h2>
-        <p>For any concerns or questions about responsible gaming, please contact us:</p>
-        <p><strong>GORA BROTHERS PRIVATE LIMITED</strong><br>
-        Jaipur, Rajasthan 302001, India<br>
-        Email: support@gorabrothers.com</p>
-    </div>
-    </main>
-
-<script src="/js/load-header-footer.js"></script>
+    <script src="/js/load-header-footer.js"></script>
 </body>
 </html>

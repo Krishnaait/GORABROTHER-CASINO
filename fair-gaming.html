@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fair Gaming Policy - GORA BROTHERS</title>
-    <link rel="stylesheet" href="css/style.css">
     <style>
         * {
             margin: 0;
@@ -14,295 +13,256 @@
 
         body {
             background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            font-family: 'Arial', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: #fff;
             line-height: 1.8;
-        }
-
-        header {
+            min-height: 100vh;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 30px;
-            background: rgba(0, 0, 0, 0.9);
-            border-bottom: 3px solid #d4af37;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            flex-direction: column;
         }
 
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #d4af37;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        main {
+            flex: 1;
         }
 
-        nav {
-            display: flex;
-            gap: 25px;
-        }
-
-        nav a {
-            color: #d4af37;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s;
-            font-size: 14px;
-        }
-
-        nav a:hover {
-            color: #ffd700;
-        }
-
-        .btn-back {
-            background: #d4af37;
-            color: #1a1a1a;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 50px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-size: 13px;
-        }
-
-        .btn-back:hover {
-            background: #ffd700;
-            transform: scale(1.05);
+        footer {
+            margin-top: auto;
         }
 
         .container {
             max-width: 1000px;
-            margin: 40px auto;
-            padding: 40px;
-            background: rgba(0, 0, 0, 0.5);
+            margin: 60px auto;
+            padding: 50px;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(212, 175, 55, 0.05) 100%);
             border: 2px solid #d4af37;
-            border-radius: 10px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(212, 175, 55, 0.15);
         }
 
         h1 {
-            color: #d4af37;
+            color: #ffd700;
             margin-bottom: 30px;
-            font-size: 2.5em;
-            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+            font-size: 2.8em;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+            letter-spacing: 1px;
+            font-weight: 700;
         }
 
         h2 {
             color: #d4af37;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            font-size: 1.5em;
-            border-bottom: 2px solid #d4af37;
-            padding-bottom: 10px;
+            margin-top: 35px;
+            margin-bottom: 20px;
+            font-size: 1.6em;
+            border-bottom: 3px solid #d4af37;
+            padding-bottom: 12px;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        h2:hover {
+            color: #ffd700;
+            border-bottom-color: #ffd700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
         }
 
         p {
-            margin-bottom: 15px;
-            color: #ccc;
-            font-size: 14px;
+            margin-bottom: 18px;
+            color: #e0e0e0;
+            font-size: 15px;
+            line-height: 1.9;
+            letter-spacing: 0.3px;
         }
 
         ul {
-            margin-left: 20px;
-            margin-bottom: 15px;
+            margin-left: 25px;
+            margin-bottom: 20px;
         }
 
         li {
-            margin-bottom: 10px;
-            color: #ccc;
-            font-size: 14px;
+            margin-bottom: 12px;
+            color: #e0e0e0;
+            font-size: 15px;
+            line-height: 1.8;
+            transition: all 0.3s ease;
         }
 
-        .info-box {
-            background: rgba(212, 175, 55, 0.1);
-            border: 2px solid #d4af37;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 5px;
+        li:before {
+            content: "▸ ";
+            color: #d4af37;
+            font-weight: bold;
+            margin-right: 8px;
         }
 
-        .info-box p {
+        strong {
+            color: #ffd700;
+            font-weight: 600;
+        }
+
+        a {
+            color: #d4af37;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid transparent;
+        }
+
+        a:hover {
+            color: #ffd700;
+            border-bottom-color: #ffd700;
+            text-shadow: 0 0 8px rgba(255, 215, 0, 0.3);
+        }
+
+        .section-number {
             color: #d4af37;
             font-weight: bold;
         }
 
-        footer {
-            background: #000;
-            color: #fff;
-            border-top: 3px solid #d4af37;
-            padding: 40px 20px;
-            margin-top: 40px;
-        }
-
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-column h3 {
-            color: #d4af37;
-            font-size: 16px;
-            margin-bottom: 15px;
-            border-bottom: 2px solid #d4af37;
-            padding-bottom: 10px;
-        }
-
-        .footer-column p {
-            font-size: 13px;
-            line-height: 1.8;
-            color: #ccc;
-            margin-bottom: 8px;
-        }
-
-        .footer-column ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .footer-column ul li {
-            margin-bottom: 8px;
-        }
-
-        .footer-column ul li a {
-            color: #d4af37;
-            text-decoration: none;
-            font-size: 13px;
-            transition: color 0.3s;
-        }
-
-        .footer-column ul li a:hover {
-            color: #ffd700;
-            text-decoration: underline;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid #333;
-            padding-top: 20px;
-            text-align: center;
-            font-size: 12px;
-            color: #999;
-        }
-
-        .footer-links {
-            margin-bottom: 15px;
-            font-size: 12px;
-        }
-
-        .footer-links a {
-            color: #d4af37;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: #ffd700;
-        }
-
         @media (max-width: 768px) {
-            header {
-                flex-wrap: wrap;
-                gap: 10px;
-                padding: 10px 15px;
-            }
-
-            nav {
-                display: none;
-            }
-
             .container {
                 margin: 20px;
-                padding: 20px;
+                padding: 30px;
             }
 
             h1 {
-                font-size: 1.8em;
+                font-size: 2em;
+                margin-bottom: 20px;
             }
 
             h2 {
-                font-size: 1.2em;
+                font-size: 1.3em;
+                margin-top: 25px;
             }
 
-            .footer-container {
-                grid-template-columns: 1fr;
-                gap: 20px;
+            p {
+                font-size: 14px;
+            }
+
+            ul {
+                margin-left: 20px;
             }
         }
     </style>
 </head>
 <body>
-
+    <!-- Header and Footer will be loaded via JavaScript -->
+    
     <main>
         <div class="container">
-        <h1>Fair Gaming Policy</h1>
+            <h1>Fair Gaming Policy</h1>
 
-        <div class="info-box">
-            <p>✓ GORA BROTHERS is committed to providing a fair and transparent gaming experience for all users. All games use certified Random Number Generators (RNG) to ensure fairness.</p>
+            <h2><span class="section-number">1.</span> Our Commitment to Fair Gaming</h2>
+            <p>GORA BROTHERS is committed to providing a fair and transparent gaming experience to all users. We believe that fair play is essential to maintaining the trust and confidence of our gaming community. All our games are designed and tested to ensure complete fairness and integrity.</p>
+
+            <h2><span class="section-number">2.</span> Random Number Generation (RNG)</h2>
+            <p>All games on GORA BROTHERS use certified Random Number Generators (RNG) to ensure that game outcomes are completely random and unpredictable. Our RNG systems are:</p>
+            <ul>
+                <li>Independently tested and certified by third-party auditors</li>
+                <li>Regularly monitored and verified for compliance</li>
+                <li>Designed to produce statistically random results</li>
+                <li>Free from bias, manipulation, or external influence</li>
+                <li>Compliant with international gaming standards</li>
+            </ul>
+
+            <h2><span class="section-number">3.</span> Game Integrity and Testing</h2>
+            <p>Every game on our platform undergoes rigorous testing and quality assurance before launch:</p>
+            <ul>
+                <li>Mathematical accuracy verification</li>
+                <li>Payout percentage validation</li>
+                <li>Performance and stability testing</li>
+                <li>Security and fraud prevention testing</li>
+                <li>Continuous monitoring for anomalies</li>
+            </ul>
+
+            <h2><span class="section-number">4.</span> Payout Percentages</h2>
+            <p>All games on GORA BROTHERS operate with transparent and fair payout percentages. The Return to Player (RTP) for each game is:</p>
+            <ul>
+                <li>Clearly documented and available to users</li>
+                <li>Calculated over a large number of game cycles</li>
+                <li>Independently verified and certified</li>
+                <li>Consistent with industry standards</li>
+                <li>Regularly audited for accuracy</li>
+            </ul>
+
+            <h2><span class="section-number">5.</span> No Game Manipulation</h2>
+            <p>GORA BROTHERS strictly prohibits any form of game manipulation or unfair practices:</p>
+            <ul>
+                <li>We do not alter game outcomes based on player behavior or history</li>
+                <li>We do not use algorithms to predict or control player wins/losses</li>
+                <li>We do not favor certain players over others</li>
+                <li>We do not manipulate odds or probabilities</li>
+                <li>We do not engage in any form of collusion or fraud</li>
+            </ul>
+
+            <h2><span class="section-number">6.</span> Transparent Game Rules</h2>
+            <p>All game rules, odds, and mechanics are clearly documented and easily accessible to players:</p>
+            <ul>
+                <li>Complete game rules are available before playing</li>
+                <li>Odds and probabilities are clearly stated</li>
+                <li>Payout structures are transparent and understandable</li>
+                <li>Special features and bonus mechanics are explained</li>
+                <li>Players can access this information at any time</li>
+            </ul>
+
+            <h2><span class="section-number">7.</span> User Account Security</h2>
+            <p>We maintain strict security measures to protect user accounts and ensure fair play:</p>
+            <ul>
+                <li>Secure authentication and login procedures</li>
+                <li>Encryption of all user data and transactions</li>
+                <li>Regular security audits and updates</li>
+                <li>Protection against unauthorized access</li>
+                <li>Fraud detection and prevention systems</li>
+            </ul>
+
+            <h2><span class="section-number">8.</span> Dispute Resolution</h2>
+            <p>In the event of any dispute or concern regarding game fairness, GORA BROTHERS has established a fair and transparent dispute resolution process:</p>
+            <ul>
+                <li>Players can report concerns to our support team</li>
+                <li>All disputes are investigated thoroughly and impartially</li>
+                <li>Evidence and documentation are reviewed carefully</li>
+                <li>Decisions are made based on facts and game logs</li>
+                <li>Players are informed of the outcome and reasoning</li>
+            </ul>
+
+            <h2><span class="section-number">9.</span> Independent Auditing</h2>
+            <p>GORA BROTHERS undergoes regular independent audits to verify compliance with fair gaming standards:</p>
+            <ul>
+                <li>Third-party auditors conduct regular game testing</li>
+                <li>RNG systems are independently certified</li>
+                <li>Payout percentages are verified and confirmed</li>
+                <li>Audit reports are available upon request</li>
+                <li>We comply with all applicable gaming regulations</li>
+            </ul>
+
+            <h2><span class="section-number">10.</span> Continuous Improvement</h2>
+            <p>GORA BROTHERS is committed to continuously improving our fair gaming practices:</p>
+            <ul>
+                <li>Regular review of game mechanics and algorithms</li>
+                <li>Implementation of latest security technologies</li>
+                <li>Staying updated with industry best practices</li>
+                <li>Regular training for staff on fair gaming principles</li>
+                <li>Feedback from players is actively considered</li>
+            </ul>
+
+            <h2><span class="section-number">11.</span> Responsible Gaming Integration</h2>
+            <p>Fair gaming goes hand in hand with responsible gaming. GORA BROTHERS promotes both:</p>
+            <ul>
+                <li>Transparent communication about game odds</li>
+                <li>Clear information about the entertainment nature of games</li>
+                <li>Resources for players concerned about their gaming habits</li>
+                <li>Support for responsible gaming practices</li>
+                <li>Commitment to player well-being</li>
+            </ul>
+
+            <h2><span class="section-number">12.</span> Contact Us</h2>
+            <p>If you have any questions about our fair gaming practices or wish to report a concern, please contact us at:</p>
+            <p>
+                <strong>GORA BROTHERS PRIVATE LIMITED</strong><br>
+                Jaipur, Rajasthan 302001, India<br>
+                Email: support@gorabrothers.com
+            </p>
         </div>
     </main>
 
-        <h2>1. Random Number Generator (RNG)</h2>
-        <p>All games on GORA BROTHERS use a certified Random Number Generator (RNG) to ensure that game outcomes are completely random and fair. The RNG is regularly tested and audited to maintain the highest standards of fairness.</p>
-
-        <h2>2. Game Integrity</h2>
-        <p>GORA BROTHERS maintains strict protocols to ensure the integrity of all games. Our systems are designed to prevent cheating, hacking, or manipulation of game outcomes. Any attempt to compromise game integrity will result in immediate account suspension.</p>
-
-        <h2>3. Transparency</h2>
-        <p>We believe in complete transparency regarding how our games work. All game rules, odds, and payout structures are clearly displayed and accessible to users. We do not hide any information about how games function.</p>
-
-        <h2>4. Equal Opportunity</h2>
-        <p>All users have an equal chance of winning or losing in our games. There are no hidden advantages or disadvantages for any user. Every spin, deal, or roll is independent and unbiased.</p>
-
-        <h2>5. No Manipulation</h2>
-        <p>GORA BROTHERS does not manipulate game outcomes based on:</p>
-        <ul>
-            <li>User account status or history</li>
-            <li>Amount of time spent on the platform</li>
-            <li>Previous wins or losses</li>
-            <li>Any other external factors</li>
-        </ul>
-
-        <h2>6. Regular Audits</h2>
-        <p>Our games and systems undergo regular audits by independent third parties to verify fairness and compliance with our stated policies. Audit results are available upon request.</p>
-
-        <h2>7. Game Specifications</h2>
-        <p>Each game on GORA BROTHERS has specific specifications regarding:</p>
-        <ul>
-            <li>Return to Player (RTP) percentages</li>
-            <li>Volatility levels</li>
-            <li>Payout frequencies</li>
-            <li>Maximum and minimum bet amounts</li>
-        </ul>
-
-        <h2>8. User Responsibility</h2>
-        <p>Users are responsible for:</p>
-        <ul>
-            <li>Maintaining the security of their account</li>
-            <li>Not attempting to cheat or manipulate games</li>
-            <li>Reporting any suspicious activity</li>
-            <li>Following all terms and conditions</li>
-        </ul>
-
-        <h2>9. Dispute Resolution</h2>
-        <p>If you believe there is an issue with a game outcome or suspect unfair play, please contact our support team immediately with details of the incident. We will investigate all complaints thoroughly and fairly.</p>
-
-        <h2>10. Compliance</h2>
-        <p>GORA BROTHERS complies with all applicable laws and regulations regarding online gaming and fair play. We are committed to maintaining the highest standards of integrity and fairness.</p>
-
-        <h2>11. Contact & Support</h2>
-        <p>For any questions or concerns about our Fair Gaming Policy, please contact us:</p>
-        <p><strong>GORA BROTHERS PRIVATE LIMITED</strong><br>
-        Jaipur, Rajasthan 302001, India<br>
-        Email: support@gorabrothers.com</p>
-
-        <h2>12. Policy Updates</h2>
-        <p>GORA BROTHERS reserves the right to update this Fair Gaming Policy at any time. Users will be notified of any significant changes. Continued use of the platform constitutes acceptance of the updated policy.</p>
-    </div>
-    </main>
-
-<script src="/js/load-header-footer.js"></script>
+    <script src="/js/load-header-footer.js"></script>
 </body>
 </html>
