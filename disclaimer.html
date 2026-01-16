@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Disclaimer - GORA BROTHERS</title>
-    <link rel="stylesheet" href="css/style.css">
     <style>
         * {
             margin: 0;
@@ -14,335 +13,199 @@
 
         body {
             background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            font-family: 'Arial', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: #fff;
             line-height: 1.8;
-        }
-
-        header {
+            min-height: 100vh;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 30px;
-            background: rgba(0, 0, 0, 0.9);
-            border-bottom: 3px solid #d4af37;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            flex-direction: column;
         }
 
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #d4af37;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        main {
+            flex: 1;
         }
 
-        nav {
-            display: flex;
-            gap: 25px;
-        }
-
-        nav a {
-            color: #d4af37;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s;
-            font-size: 14px;
-        }
-
-        nav a:hover {
-            color: #ffd700;
-        }
-
-        .btn-back {
-            background: #d4af37;
-            color: #1a1a1a;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 50px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-size: 13px;
-        }
-
-        .btn-back:hover {
-            background: #ffd700;
-            transform: scale(1.05);
+        footer {
+            margin-top: auto;
         }
 
         .container {
             max-width: 1000px;
-            margin: 40px auto;
-            padding: 40px;
-            background: rgba(0, 0, 0, 0.5);
+            margin: 60px auto;
+            padding: 50px;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(212, 175, 55, 0.05) 100%);
             border: 2px solid #d4af37;
-            border-radius: 10px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(212, 175, 55, 0.15);
         }
 
         h1 {
-            color: #d4af37;
+            color: #ffd700;
             margin-bottom: 30px;
-            font-size: 2.5em;
-            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+            font-size: 2.8em;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+            letter-spacing: 1px;
+            font-weight: 700;
         }
 
         h2 {
             color: #d4af37;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            font-size: 1.5em;
-            border-bottom: 2px solid #d4af37;
-            padding-bottom: 10px;
+            margin-top: 35px;
+            margin-bottom: 20px;
+            font-size: 1.6em;
+            border-bottom: 3px solid #d4af37;
+            padding-bottom: 12px;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        h2:hover {
+            color: #ffd700;
+            border-bottom-color: #ffd700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
         }
 
         p {
-            margin-bottom: 15px;
-            color: #ccc;
-            font-size: 14px;
+            margin-bottom: 18px;
+            color: #e0e0e0;
+            font-size: 15px;
+            line-height: 1.9;
+            letter-spacing: 0.3px;
         }
 
         ul {
-            margin-left: 20px;
-            margin-bottom: 15px;
+            margin-left: 25px;
+            margin-bottom: 20px;
         }
 
         li {
-            margin-bottom: 10px;
-            color: #ccc;
-            font-size: 14px;
+            margin-bottom: 12px;
+            color: #e0e0e0;
+            font-size: 15px;
+            line-height: 1.8;
         }
 
         .warning-box {
-            background: rgba(255, 107, 107, 0.1);
-            border: 2px solid #ff6b6b;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 5px;
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.15) 0%, rgba(255, 107, 107, 0.05) 100%);
+            border-left: 5px solid #ff6b6b;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 30px 0;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .warning-box:hover {
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.2);
+            transform: translateX(5px);
         }
 
         .warning-box p {
-            color: #ff6b6b;
-            font-weight: bold;
-        }
-
-        footer {
-            background: #000;
-            color: #fff;
-            border-top: 3px solid #d4af37;
-            padding: 40px 20px;
-            margin-top: 40px;
-        }
-
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-column h3 {
-            color: #d4af37;
+            color: #ff9999;
+            font-weight: 600;
             font-size: 16px;
-            margin-bottom: 15px;
-            border-bottom: 2px solid #d4af37;
-            padding-bottom: 10px;
-        }
-
-        .footer-column p {
-            font-size: 13px;
-            line-height: 1.8;
-            color: #ccc;
-            margin-bottom: 8px;
-        }
-
-        .footer-column ul {
-            list-style: none;
-            padding: 0;
             margin: 0;
         }
 
-        .footer-column ul li {
-            margin-bottom: 8px;
+        strong {
+            color: #ffd700;
+            font-weight: 600;
         }
 
-        .footer-column ul li a {
+        a {
             color: #d4af37;
             text-decoration: none;
-            font-size: 13px;
-            transition: color 0.3s;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid transparent;
         }
 
-        .footer-column ul li a:hover {
+        a:hover {
             color: #ffd700;
-            text-decoration: underline;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid #333;
-            padding-top: 20px;
-            text-align: center;
-            font-size: 12px;
-            color: #999;
-        }
-
-        .footer-links {
-            margin-bottom: 15px;
-            font-size: 12px;
-        }
-
-        .footer-links a {
-            color: #d4af37;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: #ffd700;
+            border-bottom-color: #ffd700;
+            text-shadow: 0 0 8px rgba(255, 215, 0, 0.3);
         }
 
         @media (max-width: 768px) {
-            header {
-                flex-wrap: wrap;
-                gap: 10px;
-                padding: 10px 15px;
-            }
-
-            nav {
-                display: none;
-            }
-
             .container {
                 margin: 20px;
-                padding: 20px;
+                padding: 30px;
             }
 
             h1 {
-                font-size: 1.8em;
+                font-size: 2em;
+                margin-bottom: 20px;
             }
 
             h2 {
-                font-size: 1.2em;
+                font-size: 1.3em;
+                margin-top: 25px;
             }
 
-            .footer-container {
-                grid-template-columns: 1fr;
-                gap: 20px;
+            p {
+                font-size: 14px;
+            }
+
+            ul {
+                margin-left: 20px;
+            }
+
+            .warning-box {
+                padding: 20px;
+                margin: 20px 0;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="logo">🎰 GORA BROTHERS</div>
-        <nav>
-            <a href="/">HOME</a>
-            <a href="/#games">GAMES</a>
-            <a href="/about.html">ABOUT</a>
-        </nav>
-        <button class="btn-back" onclick="window.location.href='/'">← BACK TO HOME</button>
-    </header>
+    <!-- Header and Footer will be loaded via JavaScript -->
+    
+    <main>
+        <div class="container">
+            <h1>Disclaimer</h1>
 
-    <div class="container">
-        <h1>Disclaimer</h1>
+            <div class="warning-box">
+                <p>⚠️ IMPORTANT: This website is for entertainment purposes only. No real money is involved. Users must be 18 years or older.</p>
+            </div>
 
-        <div class="warning-box">
-            <p>⚠️ IMPORTANT: This website is for entertainment purposes only. No real money is involved. Users must be 18 years or older.</p>
+            <h2>Age & Responsible Gaming Disclaimer</h2>
+            <p>GORA BROTHERS is a free-to-play gaming website designed for entertainment purposes only. By accessing this website, you acknowledge and agree to the following:</p>
+
+            <h2>1. Age Requirement</h2>
+            <p>You must be at least 18 years of age to access and use this website. If you are under 18 years of age, you are strictly prohibited from using this website. GORA BROTHERS does not knowingly collect information from minors.</p>
+
+            <h2>2. No Real Money</h2>
+            <p>GORA BROTHERS is a completely free gaming platform. No real money is involved in any games or transactions. All games are played using virtual currency for entertainment purposes only. There is no possibility of winning real money or prizes of monetary value.</p>
+
+            <h2>3. Entertainment Only</h2>
+            <p>All games on this website are provided purely for entertainment and recreational purposes. They are not intended to be a source of income or profit. Users should not rely on these games as a means of earning money.</p>
+
+            <h2>4. No Gambling</h2>
+            <p>GORA BROTHERS is not a gambling website. We do not offer real money gambling, betting, or any form of wagering. The games are simulations designed for fun and entertainment only.</p>
+
+            <h2>5. Responsible Use</h2>
+            <p>We encourage all users to use this website responsibly. If you feel that your gaming habits are becoming problematic, please seek help from appropriate resources. We recommend taking regular breaks and not spending excessive time on gaming.</p>
+
+            <h2>6. No Liability</h2>
+            <p>GORA BROTHERS and its operators are not liable for any consequences resulting from the use of this website. Users assume all risks associated with their use of the platform.</p>
+
+            <h2>7. Technical Issues</h2>
+            <p>While we strive to maintain a stable and functional platform, GORA BROTHERS does not guarantee uninterrupted service. We are not responsible for any technical issues, downtime, or data loss.</p>
+
+            <h2>8. Modification of Content</h2>
+            <p>GORA BROTHERS reserves the right to modify, update, or remove any games or content at any time without prior notice.</p>
+
+            <h2>9. User Conduct</h2>
+            <p>Users agree to use this website in a responsible and lawful manner. Any misuse, hacking, or unauthorized access to the platform is strictly prohibited.</p>
+
+            <h2>10. Contact & Support</h2>
+            <p>For any questions or concerns regarding this disclaimer, please contact us at:</p>
+            <p><strong>GORA BROTHERS PRIVATE LIMITED</strong><br>
+            Jaipur, Rajasthan 302001, India<br>
+            Email: <a href="mailto:support@gorabrothers.com">support@gorabrothers.com</a></p>
         </div>
+    </main>
 
-        <h2>Age & Responsible Gaming Disclaimer</h2>
-        <p>GORA BROTHERS is a free-to-play gaming website designed for entertainment purposes only. By accessing this website, you acknowledge and agree to the following:</p>
-
-        <h2>1. Age Requirement</h2>
-        <p>You must be at least 18 years of age to access and use this website. If you are under 18 years of age, you are strictly prohibited from using this website. GORA BROTHERS does not knowingly collect information from minors.</p>
-
-        <h2>2. No Real Money</h2>
-        <p>GORA BROTHERS is a completely free gaming platform. No real money is involved in any games or transactions. All games are played using virtual currency for entertainment purposes only. There is no possibility of winning real money or prizes of monetary value.</p>
-
-        <h2>3. Entertainment Only</h2>
-        <p>All games on this website are provided purely for entertainment and recreational purposes. They are not intended to be a source of income or profit. Users should not rely on these games as a means of earning money.</p>
-
-        <h2>4. No Gambling</h2>
-        <p>GORA BROTHERS is not a gambling website. We do not offer real money gambling, betting, or any form of wagering. The games are simulations designed for fun and entertainment only.</p>
-
-        <h2>5. Responsible Use</h2>
-        <p>We encourage all users to use this website responsibly. If you feel that your gaming habits are becoming problematic, please seek help from appropriate resources. We recommend taking regular breaks and not spending excessive time on gaming.</p>
-
-        <h2>6. No Liability</h2>
-        <p>GORA BROTHERS and its operators are not liable for any consequences resulting from the use of this website. Users assume all risks associated with their use of the platform.</p>
-
-        <h2>7. Technical Issues</h2>
-        <p>While we strive to maintain a stable and functional platform, GORA BROTHERS does not guarantee uninterrupted service. We are not responsible for any technical issues, downtime, or data loss.</p>
-
-        <h2>8. Modification of Content</h2>
-        <p>GORA BROTHERS reserves the right to modify, update, or remove any games or content at any time without prior notice.</p>
-
-        <h2>9. User Conduct</h2>
-        <p>Users agree to use this website in a responsible and lawful manner. Any misuse, hacking, or unauthorized access to the platform is strictly prohibited.</p>
-
-        <h2>10. Contact & Support</h2>
-        <p>For any questions or concerns regarding this disclaimer, please contact us at:</p>
-        <p><strong>GORA BROTHERS PRIVATE LIMITED</strong><br>
-        Jaipur, Rajasthan 302001, India<br>
-        Email: support@gorabrothers.com</p>
-    </div>
-
-    <footer>
-        <div class="footer-container">
-            <div class="footer-column">
-                <h3>🎰 GORA BROTHERS</h3>
-                <p><strong>Company:</strong> GORA BROTHERS PRIVATE LIMITED</p>
-                <p><strong>CIN:</strong> U63030RJ2020PTC068805</p>
-                <p><strong>GST:</strong> 08AAICG3022F1ZY</p>
-                <p><strong>PAN:</strong> AAICG3022F</p>
-            </div>
-
-            <div class="footer-column">
-                <h3>📍 LOCATION</h3>
-                <p>Jaipur, Rajasthan, India</p>
-                <p>Premium Entertainment Experience</p>
-                <p>24/7 Support Available</p>
-                <p style="margin-top: 15px; font-size: 0.9em; color: #999;">
-                    GORA BROTHERS PRIVATE LIMITED<br>
-                    Jaipur, Rajasthan 302001, India
-                </p>
-            </div>
-
-            <div class="footer-column">
-                <h3>⚖️ LEGAL</h3>
-                <ul>
-                    <li><a href="/privacy.html">Privacy Policy</a></li>
-                    <li><a href="/terms.html">Terms & Conditions</a></li>
-                    <li><a href="/disclaimer.html">Disclaimer</a></li>
-                    <li><a href="/responsible.html">Responsible Gaming</a></li>
-                    <li><a href="/fair-gaming.html">Fair Gaming Policy</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-column">
-                <h3>🎮 GAMES</h3>
-                <ul>
-                    <li><a href="/games/chase/wrapper.html">CHASE Racing</a></li>
-                    <li><a href="/games/slots/wrapper.html">Slot Machine</a></li>
-                    <li><a href="/games/blackjack/wrapper.html">Blackjack</a></li>
-                    <li><a href="/games/lucky-spin/wrapper.html">Roulette</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <div class="footer-links">
-                <a href="/privacy.html">Privacy</a> | 
-                <a href="/terms.html">Terms</a> | 
-                <a href="/disclaimer.html">Disclaimer</a> | 
-                <a href="/responsible.html">Responsible Gaming</a> | 
-                <a href="/fair-gaming.html">Fair Gaming</a>
-            </div>
-            <p style="font-size: 12px; color: #999; margin-bottom: 10px;">© 2025 GORA BROTHERS PRIVATE LIMITED. All Rights Reserved. | Play For Entertainment</p>
-            <p style="font-size: 11px; color: #ff6b6b; font-weight: bold;">⚠️ 18+ ONLY | PLAY FOR FUN | NO REAL MONEY<br>This is a free-to-play gaming website for entertainment purposes only</p>
-        </div>
-    </footer>
-<script src="/js/load-header-footer.js"></script>
+    <script src="/js/load-header-footer.js"></script>
 </body>
 </html>
