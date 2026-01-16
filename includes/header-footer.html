@@ -1,6 +1,9 @@
 <!-- SHARED HEADER -->
 <header id="site-header">
-    <a href="/" class="logo">🎰 GORA BROTHERS</a>
+    <a href="/" class="logo">
+        <img src="/images/phoenix-logo.webp" alt="GORA BROTHERS" class="logo-img">
+        <span class="logo-text">GORA BROTHERS</span>
+    </a>
     <nav>
         <a href="/">HOME</a>
         <a href="/#games">GAMES</a>
@@ -84,13 +87,28 @@
     }
 
     .logo {
-        font-size: 28px;
-        font-weight: bold;
-        color: #d4af37;
         text-decoration: none;
         display: flex;
         align-items: center;
-        gap: 10px;
+        gap: 12px;
+        transition: transform 0.3s ease;
+    }
+
+    .logo:hover {
+        transform: scale(1.05);
+    }
+
+    .logo-img {
+        height: 50px;
+        width: auto;
+        object-fit: contain;
+    }
+
+    .logo-text {
+        font-size: 24px;
+        font-weight: bold;
+        color: #d4af37;
+        letter-spacing: 2px;
     }
 
     nav {

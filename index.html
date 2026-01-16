@@ -12,729 +12,571 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
             color: #fff;
             min-height: 100vh;
         }
 
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 40px;
-            background: rgba(0, 0, 0, 0.7);
-            border-bottom: 3px solid #d4af37;
-            position: static;
-        }
-
-        .logo {
-            font-size: 28px;
-            font-weight: bold;
-            color: #d4af37;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .logo img {
-            height: 50px;
-            width: auto;
-            object-fit: contain;
-        }
-
-        nav {
-            display: flex;
-            gap: 30px;
-        }
-
-        nav a {
-            color: #d4af37;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s;
-            font-size: 14px;
-        }
-
-        nav a:hover {
-            color: #ffd700;
-            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-        }
-
+        /* HERO SECTION - PROFESSIONAL LAYOUT */
         .hero {
             position: relative;
-            height: 700px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 100px 60px;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2d2d2d 100%);
+            overflow: hidden;
+        }
+
+        /* 18+ BADGE - CORNER */
+        .age-badge {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
+            border: 3px solid #ffff00;
+            color: #fff;
+            padding: 12px 20px;
+            border-radius: 50%;
+            font-weight: bold;
+            font-size: 14px;
+            z-index: 100;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+            text-align: center;
+            width: 80px;
+            height: 80px;
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden;
-            border-bottom: 3px solid #d4af37;
-            background: #000;
+            animation: ageBadgePulse 2s ease-in-out infinite;
         }
 
-        .hero-logo-section {
-            position: absolute;
-            top: 80px;
-            z-index: 5;
-            text-align: center;
+        @keyframes ageBadgePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
         }
 
-        .hero-logo-section img {
-            height: 200px;
-            width: auto;
-            object-fit: contain;
-            filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.5));
-            animation: logoFloat 3s ease-in-out infinite;
+        /* LEFT CONTENT SECTION */
+        .hero-left {
+            flex: 1;
+            max-width: 550px;
+            z-index: 10;
+            padding-right: 60px;
         }
 
-        @keyframes logoFloat {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-
-        .hero-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            z-index: 0;
-            animation: heroSlideshow 12s ease-in-out infinite;
-            opacity: 0.9;
-        }
-
-        @keyframes heroSlideshow {
-            0% { background-image: url('/images/casino_homepage_hero.webp'); transform: scale(1); }
-            25% { background-image: url('/images/casino_homepage_hero.webp'); transform: scale(1.05); }
-            50% { background-image: url('/images/realistic_casino_floor.webp'); transform: scale(1); }
-            75% { background-image: url('/images/hero_banner_vip.webp'); transform: scale(1.05); }
-            100% { background-image: url('/images/casino_homepage_hero.webp'); transform: scale(1); }
-        }
-
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(212, 175, 55, 0.1) 100%);
-            z-index: 2;
-        }
-
-        .hero-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 3;
-            padding: 0 40px;
-            text-align: center;
-            margin-top: 120px;
-        }
-
-        .age-badge {
-            display: inline-block;
-            background: rgba(255, 0, 0, 0.2);
-            border: 2px solid #ff0000;
-            color: #ff0000;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-weight: bold;
-            margin-bottom: 20px;
-            font-size: 12px;
-        }
-
-        .hero h1 {
+        .hero-left h1 {
             font-size: 56px;
-            color: #d4af37;
-            margin-bottom: 20px;
-            text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 25px;
+            background: linear-gradient(135deg, #ffd700 0%, #d4af37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -1px;
         }
 
-        .hero p {
+        .hero-left p {
             font-size: 18px;
+            line-height: 1.8;
             color: #ccc;
             margin-bottom: 30px;
-            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        .hero-features {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            color: #d4af37;
+            font-weight: 600;
+        }
+
+        .feature-item::before {
+            content: "✓";
+            font-size: 18px;
+            color: #ffd700;
+            font-weight: bold;
         }
 
         .cta-buttons {
             display: flex;
             gap: 20px;
-            justify-content: center;
-            margin-bottom: 40px;
             flex-wrap: wrap;
         }
 
-        .btn-primary {
-            background: linear-gradient(135deg, #d4af37 0%, #ffd700 100%);
-            color: #1a1a1a;
-            padding: 16px 40px;
+        .btn {
+            padding: 15px 40px;
+            font-size: 16px;
+            font-weight: bold;
             border: none;
             border-radius: 50px;
-            font-weight: bold;
-            font-size: 16px;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: all 0.3s ease;
             text-decoration: none;
             display: inline-block;
-            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+            letter-spacing: 1px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #ffd700 0%, #d4af37 100%);
+            color: #000;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
         }
 
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(212, 175, 55, 0.5);
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.5);
         }
 
         .btn-secondary {
             background: transparent;
             color: #d4af37;
-            padding: 16px 40px;
             border: 2px solid #d4af37;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 16px;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-decoration: none;
-            display: inline-block;
         }
 
         .btn-secondary:hover {
             background: rgba(212, 175, 55, 0.1);
-            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+            color: #ffd700;
+            border-color: #ffd700;
         }
 
-        .container {
+        /* RIGHT IMAGES SECTION */
+        .hero-right {
+            flex: 1;
+            position: relative;
+            height: 600px;
+            z-index: 5;
+        }
+
+        .image-grid {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .image-card {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            border: 2px solid #d4af37;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .image-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 70px rgba(212, 175, 55, 0.4);
+            border-color: #ffd700;
+        }
+
+        .image-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .image-card-large {
+            grid-column: 1 / -1;
+            height: 280px;
+        }
+
+        .image-card-small {
+            height: 140px;
+        }
+
+        /* GAMES SECTION */
+        .games-section {
             max-width: 1200px;
-            margin: 0 auto;
-            padding: 60px 40px;
+            margin: 100px auto;
+            padding: 0 40px;
         }
 
         .section-title {
-            text-align: center;
+            font-size: 42px;
+            font-weight: 900;
             margin-bottom: 50px;
-        }
-
-        .section-title h2 {
-            font-size: 44px;
-            color: #d4af37;
-            margin-bottom: 10px;
-            text-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
-        }
-
-        .section-title p {
-            color: #aaa;
-            font-size: 16px;
+            text-align: center;
+            background: linear-gradient(135deg, #ffd700 0%, #d4af37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .games-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
-            margin-bottom: 60px;
         }
 
         .game-card {
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(20, 20, 20, 0.8);
             border: 2px solid #d4af37;
-            border-radius: 12px;
+            border-radius: 15px;
             overflow: hidden;
-            transition: all 0.3s;
+            transition: all 0.3s ease;
             cursor: pointer;
-            display: flex;
-            flex-direction: column;
         }
 
         .game-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.3);
+            box-shadow: 0 20px 50px rgba(212, 175, 55, 0.3);
             border-color: #ffd700;
         }
 
         .game-card-image {
             width: 100%;
             height: 200px;
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.2) 0%, rgba(0, 0, 0, 0.8) 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 60px;
-            border-bottom: 2px solid #d4af37;
             object-fit: cover;
-        }
-
-        .game-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-bottom: 2px solid #d4af37;
+            display: block;
         }
 
         .game-card-content {
-            padding: 25px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
+            padding: 20px;
         }
 
-        .game-card h3 {
-            color: #ffd700;
-            font-size: 24px;
+        .game-card-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #d4af37;
             margin-bottom: 10px;
         }
 
-        .game-card p {
+        .game-card-description {
+            font-size: 14px;
+            color: #ccc;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .game-card-badge {
+            display: inline-block;
+            background: rgba(212, 175, 55, 0.2);
+            color: #d4af37;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-bottom: 15px;
+        }
+
+        .play-btn {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #ffd700 0%, #d4af37 100%);
+            color: #000;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .play-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+        }
+
+        /* WHY CHOOSE SECTION */
+        .why-choose {
+            background: rgba(20, 20, 20, 0.6);
+            padding: 60px 40px;
+            margin: 80px 0;
+            border-top: 3px solid #d4af37;
+            border-bottom: 3px solid #d4af37;
+        }
+
+        .why-choose-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .why-choose h2 {
+            font-size: 36px;
+            font-weight: 900;
+            margin-bottom: 40px;
+            color: #d4af37;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .benefit-item {
+            display: flex;
+            gap: 15px;
+        }
+
+        .benefit-icon {
+            font-size: 28px;
+            color: #ffd700;
+            flex-shrink: 0;
+        }
+
+        .benefit-text h3 {
+            color: #d4af37;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        .benefit-text p {
             color: #ccc;
             font-size: 14px;
             line-height: 1.6;
-            margin-bottom: 20px;
-            flex-grow: 1;
         }
 
-        .game-card-footer {
-            display: flex;
-            gap: 10px;
-            align-items: center;
-        }
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .hero {
+                flex-direction: column;
+                padding: 60px 30px;
+                min-height: auto;
+            }
 
-        .game-badge {
-            background: rgba(212, 175, 55, 0.2);
-            color: #d4af37;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: bold;
-        }
+            .hero-left {
+                max-width: 100%;
+                padding-right: 0;
+                margin-bottom: 40px;
+            }
 
-        .btn-play {
-            background: linear-gradient(135deg, #d4af37 0%, #ffd700 100%);
-            color: #1a1a1a;
-            padding: 12px 24px;
-            border: none;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 14px;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-decoration: none;
-            display: inline-block;
-            margin-left: auto;
-        }
+            .hero-left h1 {
+                font-size: 42px;
+            }
 
-        .btn-play:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
-        }
+            .hero-right {
+                height: 400px;
+                width: 100%;
+            }
 
-        .info-section {
-            background: rgba(212, 175, 55, 0.1);
-            padding: 40px;
-            border-radius: 12px;
-            border-left: 4px solid #d4af37;
-            margin-bottom: 40px;
-        }
+            .image-grid {
+                grid-template-columns: 1fr 1fr;
+            }
 
-        .info-section h3 {
-            color: #ffd700;
-            margin-bottom: 15px;
-            font-size: 20px;
-        }
+            .image-card-large {
+                grid-column: 1 / -1;
+                height: 200px;
+            }
 
-        .info-section p {
-            color: #ccc;
-            line-height: 1.8;
-            margin-bottom: 10px;
+            .image-card-small {
+                height: 100px;
+            }
         }
-
-        /* Old footer styles removed - using .footer-new instead */
 
         @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                gap: 15px;
-                padding: 15px 20px;
-            }
-
-            nav {
-                gap: 15px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
             .hero {
-                height: 400px;
+                padding: 40px 20px;
             }
 
-            .hero-content {
-                padding: 0 20px;
-            }
-
-            .hero h1 {
+            .hero-left h1 {
                 font-size: 32px;
             }
 
-            .hero p {
-                font-size: 14px;
+            .hero-left p {
+                font-size: 16px;
             }
 
-            .container {
-                padding: 30px 20px;
+            .age-badge {
+                width: 70px;
+                height: 70px;
+                font-size: 12px;
             }
 
-            .section-title h2 {
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .hero-right {
+                height: 300px;
+            }
+
+            .image-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .image-card-large,
+            .image-card-small {
+                height: 200px;
+            }
+
+            .section-title {
                 font-size: 28px;
             }
 
             .games-grid {
                 grid-template-columns: 1fr;
             }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .btn-primary, .btn-secondary {
-                width: 100%;
-                max-width: 300px;
-            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <a href="/" class="logo"><img src="/images/logo.webp" alt="GORA BROTHERS Logo"> GORA BROTHERS</a>
-        <nav>
-            <a href="/">HOME</a>
-            <a href="#games">GAMES</a>
-            <a href="/about.html">ABOUT</a>
-            <a href="/contact.html">CONTACT</a>
-        </nav>
-    </header>
+    <!-- HEADER WILL BE LOADED BY JAVASCRIPT -->
+    <div id="header-placeholder"></div>
 
-    <div class="hero">
-        <div class="hero-background"></div>
-        <div class="hero-overlay"></div>
-        <div class="hero-logo-section">
-            <img src="/images/logo.webp" alt="GORA BROTHERS Phoenix Logo">
-        </div>
-        <div class="hero-content">
-            <div class="age-badge">18+ ONLY | PLAY FOR FUN</div>
-            <h1>GORA BROTHERS</h1>
-            <p>Experience premium casino gaming with our collection of exciting games.<br>100% Free - No Real Money - No Registration Required</p>
+    <!-- 18+ AGE BADGE -->
+    <div class="age-badge">18+<br>ONLY</div>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <!-- LEFT CONTENT -->
+        <div class="hero-left">
+            <h1>The Ultimate Free Casino Experience</h1>
+            <p>Play authentic casino games with stunning graphics and realistic gameplay. No registration, no real money, pure entertainment.</p>
+            
+            <div class="hero-features">
+                <div class="feature-item">100% Free-to-Play</div>
+                <div class="feature-item">No Registration</div>
+                <div class="feature-item">24/7 Available</div>
+            </div>
+
             <div class="cta-buttons">
-                <button class="btn-primary" onclick="document.getElementById('games').scrollIntoView({behavior: 'smooth'})">PLAY NOW</button>
-                <button class="btn-secondary" onclick="window.location.href='/about.html'">LEARN MORE</button>
+                <button class="btn btn-primary">PLAY NOW</button>
+                <button class="btn btn-secondary">LEARN MORE</button>
             </div>
         </div>
-    </div>
 
-    <div class="container">
-        <div class="section-title" id="games">
-            <h2>🎮 Featured Games</h2>
-            <p>Choose your favorite game and start playing now!</p>
+        <!-- RIGHT IMAGES -->
+        <div class="hero-right">
+            <div class="image-grid">
+                <div class="image-card image-card-large">
+                    <img src="/images/casino-interior.jpg" alt="Futuristic Casino Interior">
+                </div>
+                <div class="image-card image-card-small">
+                    <img src="/images/blackjack-table.webp" alt="Professional Blackjack Table">
+                </div>
+                <div class="image-card image-card-small">
+                    <img src="/images/poker-table.webp" alt="VIP Poker Table">
+                </div>
+            </div>
         </div>
+    </section>
 
+    <!-- GAMES SECTION -->
+    <section class="games-section">
+        <h2 class="section-title">Featured Games</h2>
         <div class="games-grid">
-            <!-- CHASE Racing Game -->
+            <!-- CHASE GAME -->
             <div class="game-card">
-                <img src="images/chase-game.webp" alt="CHASE Racing Game" style="width: 100%; height: 200px; object-fit: cover; border-bottom: 2px solid #d4af37;">
+                <img src="/images/chase-game.webp" alt="CHASE Racing" class="game-card-image">
                 <div class="game-card-content">
-                    <h3>CHASE</h3>
-                    <p>Experience futuristic 3D racing with challenging tracks. Navigate obstacles, collect bonuses, and compete for the highest score!</p>
-                    <div class="game-card-footer">
-                        <span class="game-badge">Racing</span>
-                        <a href="/games/chase/wrapper.html" class="btn-play">PLAY NOW</a>
+                    <div class="game-card-badge">Racing</div>
+                    <h3 class="game-card-title">🏎️ CHASE Racing</h3>
+                    <p class="game-card-description">Experience futuristic 3D racing with stunning graphics and smooth controls.</p>
+                    <button class="play-btn" onclick="window.location.href='/games/chase/wrapper.html'">PLAY NOW</button>
+                </div>
+            </div>
+
+            <!-- SLOT MACHINE -->
+            <div class="game-card">
+                <img src="/images/realistic_casino_floor.webp" alt="Slot Machine" class="game-card-image">
+                <div class="game-card-content">
+                    <div class="game-card-badge">Slots</div>
+                    <h3 class="game-card-title">🎰 Slot Machine</h3>
+                    <p class="game-card-description">Classic Vegas-style slots with exciting animations and big win potential.</p>
+                    <button class="play-btn" onclick="window.location.href='/games/slots/wrapper.html'">PLAY NOW</button>
+                </div>
+            </div>
+
+            <!-- BLACKJACK -->
+            <div class="game-card">
+                <img src="/images/realistic_blackjack.webp" alt="Blackjack" class="game-card-image">
+                <div class="game-card-content">
+                    <div class="game-card-badge">Cards</div>
+                    <h3 class="game-card-title">🎴 Blackjack</h3>
+                    <p class="game-card-description">Professional casino blackjack with realistic dealer and authentic gameplay.</p>
+                    <button class="play-btn" onclick="window.location.href='/games/blackjack/wrapper.html'">PLAY NOW</button>
+                </div>
+            </div>
+
+            <!-- ROULETTE -->
+            <div class="game-card">
+                <img src="/images/realistic_roulette.webp" alt="Roulette" class="game-card-image">
+                <div class="game-card-content">
+                    <div class="game-card-badge">Roulette</div>
+                    <h3 class="game-card-title">🎡 Roulette</h3>
+                    <p class="game-card-description">Spin the authentic roulette wheel and win big with exciting betting options.</p>
+                    <button class="play-btn" onclick="window.location.href='/games/lucky-spin/wrapper.html'">PLAY NOW</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE SECTION -->
+    <section class="why-choose">
+        <div class="why-choose-content">
+            <h2>💎 Why Choose GORA BROTHERS?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">✓</div>
+                    <div class="benefit-text">
+                        <h3>100% Free-to-Play</h3>
+                        <p>No real money involved, pure entertainment</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">✓</div>
+                    <div class="benefit-text">
+                        <h3>Professional Games</h3>
+                        <p>Authentic casino experience with realistic mechanics</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">✓</div>
+                    <div class="benefit-text">
+                        <h3>Fair & Secure</h3>
+                        <p>All games use certified Random Number Generators</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">✓</div>
+                    <div class="benefit-text">
+                        <h3>24/7 Available</h3>
+                        <p>Play anytime, anywhere on any device</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">✓</div>
+                    <div class="benefit-text">
+                        <h3>No Registration</h3>
+                        <p>Start playing immediately without creating an account</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">✓</div>
+                    <div class="benefit-text">
+                        <h3>Premium Support</h3>
+                        <p>24/7 customer support for any questions</p>
                     </div>
                 </div>
             </div>
-
-            <!-- Slot Machine -->
-            <div class="game-card">
-                <img src="images/slot_machine_egypt.webp" alt="Slot Machine" style="width: 100%; height: 200px; object-fit: cover; border-bottom: 2px solid #d4af37;">
-                <div class="game-card-content">
-                    <h3>SLOT MACHINE</h3>
-                    <p>Classic 3-reel slots with exciting symbols and winning combinations. Spin the reels and watch your winnings grow!</p>
-                    <div class="game-card-footer">
-                        <span class="game-badge">Slots</span>
-                        <a href="/games/slots/wrapper.html" class="btn-play">PLAY NOW</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Blackjack -->
-            <div class="game-card">
-                <img src="images/realistic_blackjack.webp" alt="Blackjack" style="width: 100%; height: 200px; object-fit: cover; border-bottom: 2px solid #d4af37;">
-                <div class="game-card-content">
-                    <h3>BLACKJACK</h3>
-                    <p>Play the classic card game against our dealer. Use strategy and luck to beat the dealer and win big!</p>
-                    <div class="game-card-footer">
-                        <span class="game-badge">Cards</span>
-                        <a href="/games/blackjack/wrapper.html" class="btn-play">PLAY NOW</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Roulette -->
-            <div class="game-card">
-                <img src="images/realistic_roulette.webp" alt="Roulette" style="width: 100%; height: 200px; object-fit: cover; border-bottom: 2px solid #d4af37;">
-                <div class="game-card-content">
-                    <h3>ROULETTE</h3>
-                    <p>Authentic casino roulette with 37 numbers. Bet on colors, numbers, or combinations and watch the wheel spin!</p>
-                    <div class="game-card-footer">
-                        <span class="game-badge">Roulette</span>
-                        <a href="/games/lucky-spin/wrapper.html" class="btn-play">PLAY NOW</a>
-                    </div>
-                </div>
-            </div>
         </div>
+    </section>
 
-        <!-- Premium Casino Experience Section -->
-        <div style="margin-top: 80px; margin-bottom: 60px;">
-            <div class="section-title">
-                <h2>🏆 Premium Casino Experience</h2>
-                <p>Immerse yourself in our luxurious gaming environment</p>
-            </div>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; margin-bottom: 60px;">
-                <div>
-                    <img src="images/casino_interior_1.webp" alt="Futuristic Casino Interior" style="width: 100%; border-radius: 12px; border: 2px solid #d4af37; box-shadow: 0 10px 40px rgba(212, 175, 55, 0.2);">
-                </div>
-                <div>
-                    <h3 style="color: #ffd700; font-size: 28px; margin-bottom: 20px;">Experience Luxury Gaming</h3>
-                    <p style="color: #ccc; font-size: 16px; line-height: 1.8; margin-bottom: 20px;">Step into our state-of-the-art casino environment with futuristic design and premium amenities. Our gaming platform combines cutting-edge technology with authentic casino atmosphere.</p>
-                    <ul style="color: #ccc; font-size: 14px; line-height: 2;">
-                        <li>✨ Futuristic Gaming Environment</li>
-                        <li>💎 Premium Game Selection</li>
-                        <li>🎯 Fair & Transparent Gaming</li>
-                        <li>🔒 Secure & Safe Platform</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+    <!-- FOOTER WILL BE LOADED BY JAVASCRIPT -->
+    <div id="footer-placeholder"></div>
 
-        <!-- VIP Poker Experience Section -->
-        <div style="margin-bottom: 60px;">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
-                <div>
-                    <h3 style="color: #ffd700; font-size: 28px; margin-bottom: 20px;">VIP Poker Tables</h3>
-                    <p style="color: #ccc; font-size: 16px; line-height: 1.8; margin-bottom: 20px;">Experience the thrill of professional poker with our VIP table setup. Play with confidence on our premium gaming surfaces with authentic casino-quality chips and cards.</p>
-                    <ul style="color: #ccc; font-size: 14px; line-height: 2;">
-                        <li>🎴 Professional Card Games</li>
-                        <li>💰 Realistic Betting Experience</li>
-                        <li>👥 Multiplayer Gaming</li>
-                        <li>🏅 Competitive Tournaments</li>
-                    </ul>
-                </div>
-                <div>
-                    <img src="images/poker_table_vip.webp" alt="VIP Poker Table" style="width: 100%; border-radius: 12px; border: 2px solid #d4af37; box-shadow: 0 10px 40px rgba(212, 175, 55, 0.2);">
-                </div>
-            </div>
-        </div>
-
-        <!-- Blackjack Professional Experience -->
-        <div style="margin-bottom: 60px;">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
-                <div>
-                    <img src="images/realistic_blackjack.webp" alt="Professional Blackjack Table" style="width: 100%; border-radius: 12px; border: 2px solid #d4af37; box-shadow: 0 10px 40px rgba(212, 175, 55, 0.2);">
-                </div>
-                <div>
-                    <h3 style="color: #ffd700; font-size: 28px; margin-bottom: 20px;">Professional Blackjack Tables</h3>
-                    <p style="color: #ccc; font-size: 16px; line-height: 1.8; margin-bottom: 20px;">Master the classic card game on our professional blackjack tables. Experience authentic dealer gameplay with realistic card dealing and professional gaming etiquette.</p>
-                    <ul style="color: #ccc; font-size: 14px; line-height: 2;">
-                        <li>🎰 Authentic Dealer Experience</li>
-                        <li>📊 Real-time Game Statistics</li>
-                        <li>🎯 Strategic Gameplay</li>
-                        <li>🏆 Leaderboards & Achievements</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="info-section">
-            <h3>💡 Why Choose GORA BROTHERS?</h3>
-            <p>✅ <strong>100% Free-to-Play</strong> - No real money involved, pure entertainment</p>
-            <p>✅ <strong>Professional Games</strong> - Authentic casino experience with realistic mechanics</p>
-            <p>✅ <strong>Fair & Secure</strong> - All games use certified Random Number Generators (RNG)</p>
-            <p>✅ <strong>24/7 Available</strong> - Play anytime, anywhere on any device</p>
-            <p>✅ <strong>No Registration</strong> - Start playing immediately without creating an account</p>
-        </div>
-
-        <div style="text-align: center; margin-bottom: 40px;">
-            <h2 style="color: #d4af37; margin-bottom: 20px;">Ready to Start Playing?</h2>
-            <button class="btn-primary" onclick="document.getElementById('games').scrollIntoView({behavior: 'smooth'})">EXPLORE GAMES</button>
-        </div>
-    </div>
-
-    <!-- Professional 4-Column Footer -->
-    <footer class="footer-new">
-        <div class="footer-container">
-            <!-- Column 1: GORA BROTHERS -->
-            <div class="footer-column">
-                <h3>🎰 GORA BROTHERS</h3>
-                <p><strong>Company:</strong> GORA BROTHERS PRIVATE LIMITED</p>
-                <p><strong>CIN:</strong> U63030RJ2020PTC068805</p>
-                <p><strong>GST:</strong> 08AAICG3022F1ZY</p>
-                <p><strong>PAN:</strong> AAICG3022F</p>
-            </div>
-
-            <!-- Column 2: LOCATION -->
-            <div class="footer-column">
-                <h3>📍 LOCATION</h3>
-                <p>Jaipur, Rajasthan, India</p>
-                <p>Premium Entertainment Experience</p>
-                <p>24/7 Support Available</p>
-                <p style="margin-top: 15px; font-size: 0.9em; color: #999;">
-                    GORA BROTHERS PRIVATE LIMITED<br>
-                    Jaipur, Rajasthan 302001, India
-                </p>
-            </div>
-
-            <!-- Column 3: LEGAL -->
-            <div class="footer-column">
-                <h3>⚖️ LEGAL</h3>
-                <ul>
-                    <li><a href="/privacy.html">Privacy Policy</a></li>
-                    <li><a href="/terms.html">Terms & Conditions</a></li>
-                    <li><a href="/disclaimer.html">Disclaimer</a></li>
-                    <li><a href="/responsible.html">Responsible Gaming</a></li>
-                    <li><a href="/fair-gaming.html">Fair Gaming Policy</a></li>
-                </ul>
-            </div>
-
-            <!-- Column 4: GAMES -->
-            <div class="footer-column">
-                <h3>🎮 GAMES</h3>
-                <ul>
-                    <li><a href="/games/chase/wrapper.html">CHASE Racing</a></li>
-                    <li><a href="/games/slots/wrapper.html">Slot Machine</a></li>
-                    <li><a href="/games/blackjack/wrapper.html">Blackjack</a></li>
-                    <li><a href="/games/lucky-spin/wrapper.html">Roulette</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Footer Bottom -->
-        <div class="footer-bottom">
-            <div class="footer-links">
-                <a href="/privacy.html">Privacy</a> | 
-                <a href="/terms.html">Terms</a> | 
-                <a href="/disclaimer.html">Disclaimer</a> | 
-                <a href="/responsible.html">Responsible Gaming</a> | 
-                <a href="/fair-gaming.html">Fair Gaming</a>
-            </div>
-            <p class="copyright">© 2025 GORA BROTHERS PRIVATE LIMITED. All Rights Reserved. | Play For Entertainment</p>
-            <p class="warning">⚠️ 18+ ONLY | PLAY FOR FUN | NO REAL MONEY<br>This is a free-to-play gaming website for entertainment purposes only</p>
-        </div>
-    </footer>
-
-    <style>
-    .footer-new {
-        background: #000;
-        color: #fff;
-        border-top: 3px solid #d4af37;
-        padding: 40px 20px;
-        margin-top: 60px;
-    }
-
-    .footer-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 40px;
-        margin-bottom: 40px;
-    }
-
-    .footer-column h3 {
-        color: #d4af37;
-        font-size: 16px;
-        margin-bottom: 15px;
-        border-bottom: 2px solid #d4af37;
-        padding-bottom: 10px;
-    }
-
-    .footer-column p {
-        font-size: 13px;
-        line-height: 1.8;
-        color: #ccc;
-        margin-bottom: 8px;
-    }
-
-    .footer-column ul {
-        list-style: none;
-        padding: 0;
-    }
-
-    .footer-column ul li {
-        margin-bottom: 8px;
-    }
-
-    .footer-column ul li a {
-        color: #d4af37;
-        text-decoration: none;
-        font-size: 13px;
-        transition: color 0.3s;
-    }
-
-    .footer-column ul li a:hover {
-        color: #ffd700;
-        text-decoration: underline;
-    }
-
-    .footer-new .footer-bottom {
-        border-top: 1px solid #333;
-        padding-top: 20px;
-        text-align: center;
-    }
-
-    .footer-new .footer-links {
-        margin-bottom: 15px;
-        font-size: 12px;
-    }
-
-    .footer-new .footer-links a {
-        color: #d4af37;
-        text-decoration: none;
-        margin: 0 5px;
-        transition: color 0.3s;
-    }
-
-    .footer-new .footer-links a:hover {
-        color: #ffd700;
-    }
-
-    .copyright {
-        font-size: 12px;
-        color: #999;
-        margin-bottom: 10px;
-    }
-
-    .warning {
-        font-size: 11px;
-        color: #ff6b00;
-        font-weight: bold;
-        margin: 0;
-    }
-
-    @media (max-width: 768px) {
-        .footer-container {
-            grid-template-columns: 1fr;
-            gap: 30px;
-        }
-        
-        .footer-column h3 {
-            font-size: 14px;
-        }
-        
-        .footer-column p,
-        .footer-column ul li a {
-            font-size: 12px;
-        }
-    }
-    </style>
+    <!-- LOAD SHARED HEADER AND FOOTER -->
+    <script src="/js/load-header-footer.js"></script>
 </body>
 </html>
