@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - GORA BROTHERS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background: rgba(0, 0, 0, 0.7);
+            border-bottom: 3px solid #d4af37;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #d4af37;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #d4af37;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #ffd700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 40px;
+            flex: 1;
+        }
+
+        .page-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .page-title h1 {
+            font-size: 48px;
+            color: #d4af37;
+            margin-bottom: 10px;
+            text-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .page-title p {
+            color: #aaa;
+            font-size: 16px;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .contact-info {
+            background: rgba(212, 175, 55, 0.1);
+            padding: 40px;
+            border-radius: 12px;
+            border-left: 4px solid #d4af37;
+        }
+
+        .contact-info h2 {
+            color: #ffd700;
+            margin-bottom: 25px;
+            font-size: 24px;
+        }
+
+        .contact-info-item {
+            margin-bottom: 25px;
+        }
+
+        .contact-info-item h3 {
+            color: #d4af37;
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .contact-info-item p {
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        .contact-info-item a {
+            color: #ffd700;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .contact-info-item a:hover {
+            text-decoration: underline;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
+        .contact-form {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 40px;
+            border-radius: 12px;
+            border: 2px solid #d4af37;
+        }
+
+        .contact-form h2 {
+            color: #ffd700;
+            margin-bottom: 25px;
+            font-size: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            color: #d4af37;
+            font-weight: bold;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid #d4af37;
+            border-radius: 6px;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .btn-submit {
+            background: linear-gradient(135deg, #d4af37 0%, #ffd700 100%);
+            color: #1a1a1a;
+            padding: 14px 40px;
+            border: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
+        }
+
+        main {
+            flex: 1;
+        }
+
+        footer {
+            margin-top: auto;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px 20px;
+            }
+
+            nav {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .container {
+                padding: 30px 20px;
+            }
+
+            .page-title h1 {
+                font-size: 32px;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="/" class="logo">🎰 GORA BROTHERS</a>
+        <nav>
+            <a href="/">HOME</a>
+            <a href="/#games">GAMES</a>
+            <a href="/about.html">ABOUT</a>
+            <a href="/contact.html">CONTACT</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="page-title">
+                <h1>Contact Us</h1>
+                <p>Get in touch with the GORA BROTHERS team</p>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Contact Information</h2>
+                    
+                    <div class="contact-info-item">
+                        <h3>📧 Email</h3>
+                        <p><a href="mailto:contact@gorabrothers.com">contact@gorabrothers.com</a></p>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <h3>📍 Address</h3>
+                        <p>GORA BROTHERS PRIVATE LIMITED<br>Jaipur, Rajasthan 302001<br>India</p>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <h3>🏢 Company Details</h3>
+                        <p><strong>CIN:</strong> U63030RJ2020PTC068805<br>
+                        <strong>GST:</strong> 08AAICG3022F1ZY<br>
+                        <strong>PAN:</strong> AAICG3022F</p>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <h3>⏰ Support Hours</h3>
+                        <p>24/7 Support Available<br>We're here to help anytime!</p>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h2>Send us a Message</h2>
+                    <form onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <label for="name">Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-submit">SEND MESSAGE</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Professional 4-Column Footer -->
+    <footer class="footer-new">
+        <div class="footer-container">
+            <!-- Column 1: GORA BROTHERS -->
+            <div class="footer-column">
+                <h3>🎰 GORA BROTHERS</h3>
+                <p><strong>Company:</strong> GORA BROTHERS PRIVATE LIMITED</p>
+                <p><strong>CIN:</strong> U63030RJ2020PTC068805</p>
+                <p><strong>GST:</strong> 08AAICG3022F1ZY</p>
+                <p><strong>PAN:</strong> AAICG3022F</p>
+            </div>
+
+            <!-- Column 2: LOCATION -->
+            <div class="footer-column">
+                <h3>📍 LOCATION</h3>
+                <p>Jaipur, Rajasthan, India</p>
+                <p>Premium Entertainment Experience</p>
+                <p>24/7 Support Available</p>
+                <p style="margin-top: 15px; font-size: 0.9em; color: #999;">
+                    GORA BROTHERS PRIVATE LIMITED<br>
+                    Jaipur, Rajasthan 302001, India
+                </p>
+            </div>
+
+            <!-- Column 3: LEGAL -->
+            <div class="footer-column">
+                <h3>⚖️ LEGAL</h3>
+                <ul>
+                    <li><a href="/privacy.html">Privacy Policy</a></li>
+                    <li><a href="/terms.html">Terms & Conditions</a></li>
+                    <li><a href="/disclaimer.html">Disclaimer</a></li>
+                    <li><a href="/responsible.html">Responsible Gaming</a></li>
+                    <li><a href="/fair-gaming.html">Fair Gaming Policy</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 4: GAMES -->
+            <div class="footer-column">
+                <h3>🎮 GAMES</h3>
+                <ul>
+                    <li><a href="/games/chase/wrapper.html">CHASE Racing</a></li>
+                    <li><a href="/games/slots/wrapper.html">Slot Machine</a></li>
+                    <li><a href="/games/blackjack/wrapper.html">Blackjack</a></li>
+                    <li><a href="/games/lucky-spin/wrapper.html">Roulette</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="footer-links">
+                <a href="/privacy.html">Privacy</a> | 
+                <a href="/terms.html">Terms</a> | 
+                <a href="/disclaimer.html">Disclaimer</a> | 
+                <a href="/responsible.html">Responsible Gaming</a> | 
+                <a href="/fair-gaming.html">Fair Gaming</a>
+            </div>
+            <p class="copyright">© 2025 GORA BROTHERS PRIVATE LIMITED. All Rights Reserved. | Play For Entertainment</p>
+            <p class="warning">⚠️ 18+ ONLY | PLAY FOR FUN | NO REAL MONEY<br>This is a free-to-play gaming website for entertainment purposes only</p>
+        </div>
+    </footer>
+
+    <style>
+    .footer-new {
+        background: #000;
+        color: #fff;
+        border-top: 3px solid #d4af37;
+        padding: 40px 20px;
+        margin-top: 60px;
+    }
+
+    .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+        margin-bottom: 40px;
+    }
+
+    .footer-column h3 {
+        color: #d4af37;
+        font-size: 16px;
+        margin-bottom: 15px;
+        border-bottom: 2px solid #d4af37;
+        padding-bottom: 10px;
+    }
+
+    .footer-column p {
+        font-size: 13px;
+        line-height: 1.8;
+        color: #ccc;
+        margin-bottom: 8px;
+    }
+
+    .footer-column ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-column ul li {
+        margin-bottom: 8px;
+    }
+
+    .footer-column ul li a {
+        color: #d4af37;
+        text-decoration: none;
+        font-size: 13px;
+        transition: color 0.3s;
+    }
+
+    .footer-column ul li a:hover {
+        color: #ffd700;
+        text-decoration: underline;
+    }
+
+    .footer-new .footer-bottom {
+        border-top: 1px solid #333;
+        padding-top: 20px;
+        text-align: center;
+    }
+
+    .footer-new .footer-links {
+        margin-bottom: 15px;
+        font-size: 12px;
+    }
+
+    .footer-new .footer-links a {
+        color: #d4af37;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    .footer-new .footer-links a:hover {
+        color: #ffd700;
+    }
+
+    .copyright {
+        font-size: 12px;
+        color: #999;
+        margin-bottom: 10px;
+    }
+
+    .warning {
+        font-size: 11px;
+        color: #ff6b6b;
+        font-weight: bold;
+    }
+    </style>
+
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert('Thank you for your message! We will get back to you soon at ' + document.getElementById('email').value);
+            event.target.reset();
+        }
+    </script>
+</body>
+</html>
