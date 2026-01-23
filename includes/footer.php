@@ -48,6 +48,12 @@
         </div>
     </div>
 
+    <!-- Footer Logo Section -->
+    <div class="footer-logo-section">
+        <img src="/images/logo_transparent.webp" alt="GORA BROTHERS Logo" class="footer-logo">
+        <p class="footer-tagline">Premium Free-to-Play Casino Experience</p>
+    </div>
+
     <!-- Footer Bottom -->
     <div class="footer-bottom">
         <div class="footer-links">
@@ -143,6 +149,34 @@
     font-size: 12px;
     color: #999;
     margin-bottom: 10px;
+}
+
+.footer-logo-section {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px 0;
+    border-bottom: 2px solid #d4af37;
+}
+
+.footer-logo {
+    height: 80px;
+    width: auto;
+    margin-bottom: 10px;
+    filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5));
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.footer-logo:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.7));
+}
+
+.footer-tagline {
+    font-size: 14px;
+    color: #d4af37;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin: 0;
 }
 
 .legal-disclaimer {
