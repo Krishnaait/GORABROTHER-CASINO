@@ -57,7 +57,8 @@
             <a href="/responsible.html">Responsible Gaming</a> | 
             <a href="/fair-gaming.html">Fair Gaming</a>
         </div>
-        <p class="copyright">© 2025 GORA BROTHERS PRIVATE LIMITED. All Rights Reserved. | Play For Entertainment</p>
+        <p class="copyright">© 2026 GORA BROTHERS PRIVATE LIMITED. All Rights Reserved. | Play For Entertainment</p>
+        <p class="legal-disclaimer">🔒 <strong>LEGAL DISCLAIMER:</strong> GORA BROTHERS PRIVATE LIMITED is an independent company that operates completely autonomously. This business does NOT affiliate with, endorse, or have any association with any other brand, company, or organization. GORA BROTHERS operates solely under its own name and management.</p>
         <p class="warning">⚠️ 18+ ONLY | PLAY FOR FUN | NO REAL MONEY<br>This is a free-to-play gaming website for entertainment purposes only</p>
     </div>
 </footer>
@@ -142,6 +143,18 @@
     font-size: 12px;
     color: #999;
     margin-bottom: 10px;
+}
+
+.legal-disclaimer {
+    font-size: 12px;
+    color: #ffd700;
+    font-weight: bold;
+    margin: 15px 0 10px 0;
+    padding: 12px 15px;
+    background: rgba(212, 175, 55, 0.1);
+    border-left: 3px solid #d4af37;
+    border-radius: 4px;
+    line-height: 1.6;
 }
 
 .warning {
